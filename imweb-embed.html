@@ -81,7 +81,7 @@
   display:flex;align-items:center;justify-content:space-between;gap:24px;
 }
 .iroom .brand{display:flex;align-items:baseline;gap:10px;font-family:var(--latin);}
-.iroom .brand .mark{
+.iroom .brand .lmark{
   font-size:24px;font-weight:500;letter-spacing:.04em;
 }
 .iroom .brand .ko{font-family:var(--serif);font-size:14px;font-weight:500;letter-spacing:.08em;opacity:.85}
@@ -368,7 +368,7 @@
 .iroom .mobile-menu{position:fixed;inset:0;z-index:120;background:var(--ivory);transform:translateX(100%);transition:transform .45s cubic-bezier(.7,0,.2,1);overflow-y:auto;color:var(--ink)}
 .iroom .mobile-menu.open{transform:none}
 .iroom .mm-top{display:flex;justify-content:space-between;align-items:center;padding:22px 26px;border-bottom:1px solid var(--line)}
-.iroom .mm-top .brand .mark{color:var(--ink)}
+.iroom .mm-top .brand .lmark{color:var(--ink)}
 .iroom .mm-close{background:none;border:0;font-size:26px;line-height:1;cursor:pointer}
 .iroom .mm-list{padding:14px 26px 40px}
 .iroom .mm-list>li{border-bottom:1px solid var(--line)}
@@ -419,7 +419,7 @@
 <header class="nav" id="nav">
   <div class="nav-inner">
     <a href="index.html" class="brand">
-      <span class="mark">iroom</span>
+      <span class="lmark">iroom</span>
       <span class="ko">이룸피부과</span>
     </a>
     <nav>
@@ -687,7 +687,7 @@
 <!-- ===== MOBILE MENU ===== -->
 <div class="mobile-menu" id="mobileMenu">
   <div class="mm-top">
-    <div class="brand"><span class="mark" style="font-family:var(--latin);font-size:24px">iroom</span></div>
+    <div class="brand"><span class="lmark" style="font-family:var(--latin);font-size:24px">iroom</span></div>
     <button class="mm-close" id="mmClose" aria-label="닫기">×</button>
   </div>
   <ul class="mm-list">

@@ -89,7 +89,7 @@ header.nav.scrolled{
   display:flex;align-items:center;justify-content:space-between;gap:24px;
 }
 .brand{display:flex;align-items:baseline;gap:10px;font-family:var(--latin);}
-.brand .mark{
+.brand .lmark{
   font-size:24px;font-weight:500;letter-spacing:.04em;
 }
 .brand .ko{font-family:var(--serif);font-size:14px;font-weight:500;letter-spacing:.08em;opacity:.85}
@@ -376,7 +376,7 @@ section.block{padding:clamp(80px,11vw,150px) 0;position:relative}
 .mobile-menu{position:fixed;inset:0;z-index:120;background:var(--ivory);transform:translateX(100%);transition:transform .45s cubic-bezier(.7,0,.2,1);overflow-y:auto;color:var(--ink)}
 .mobile-menu.open{transform:none}
 .mm-top{display:flex;justify-content:space-between;align-items:center;padding:22px 26px;border-bottom:1px solid var(--line)}
-.mm-top .brand .mark{color:var(--ink)}
+.mm-top .brand .lmark{color:var(--ink)}
 .mm-close{background:none;border:0;font-size:26px;line-height:1;cursor:pointer}
 .mm-list{padding:14px 26px 40px}
 .mm-list>li{border-bottom:1px solid var(--line)}
@@ -422,7 +422,7 @@ section.block{padding:clamp(80px,11vw,150px) 0;position:relative}
 <header class="nav" id="nav">
   <div class="nav-inner">
     <a href="index.html" class="brand">
-      <span class="mark">iroom</span>
+      <span class="lmark">iroom</span>
       <span class="ko">이룸피부과</span>
     </a>
     <nav>
@@ -690,7 +690,7 @@ section.block{padding:clamp(80px,11vw,150px) 0;position:relative}
 <!-- ===== MOBILE MENU ===== -->
 <div class="mobile-menu" id="mobileMenu">
   <div class="mm-top">
-    <div class="brand"><span class="mark" style="font-family:var(--latin);font-size:24px">iroom</span></div>
+    <div class="brand"><span class="lmark" style="font-family:var(--latin);font-size:24px">iroom</span></div>
     <button class="mm-close" id="mmClose" aria-label="닫기">×</button>
   </div>
   <ul class="mm-list">
