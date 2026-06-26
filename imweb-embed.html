@@ -30,6 +30,9 @@
 .iroom img{display:block;max-width:100%}
 .iroom a{color:inherit;text-decoration:none}
 .iroom .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+/* full-bleed breakout: forces edge-to-edge width even when a host page
+   (e.g. Imweb's boxed section container) wraps this in a narrower box */
+.iroom .hero,.iroom .footer{width:100vw;position:relative;left:50%;transform:translateX(-50%)}
 
 /* marble + stone textures (pure CSS, replace blocks with real photos in Imweb) */
 .iroom .marble,.iroom.marble{
@@ -402,6 +405,9 @@
   .iroom *{animation:none!important;scroll-behavior:auto}
   .iroom .reveal{opacity:1;transform:none}
 }
+
+/* imweb embed safety: don't let the wrapper clip the full-bleed breakout */
+.iroom{overflow-x:visible}
 
 </style>
 
