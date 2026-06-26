@@ -121,21 +121,27 @@ header.nav.scrolled{
 .burger span{width:24px;height:1.5px;background:currentColor;transition:.3s}
 
 /* ---------- HERO ---------- */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;color:#f6f3ec;overflow:hidden}
-.hero-bg{
-  position:absolute;inset:0;z-index:0;
-  background-color:#15130f;
-  background-image:
-    radial-gradient(100% 80% at 70% 20%, rgba(120,108,86,.35), transparent 60%),
-    radial-gradient(90% 90% at 20% 90%, rgba(0,0,0,.6), transparent 55%),
-    linear-gradient(150deg,#2a261d 0%, #100e0a 100%);
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;color:#f6f3ec;overflow:hidden;background:#15130f}
+/* ---- HERO SLIDESHOW (responsive, auto-rotating) ---- */
+.hero-slides{position:absolute;inset:0;z-index:0}
+.hero-slide{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  opacity:0;transform:scale(1.06);
+  transition:opacity 1.6s ease, transform 7s ease;
+  will-change:opacity,transform;
 }
-.hero-bg::after{ /* replace this layer with a wave/skin video or photo in Imweb */
+.hero-slide.on{opacity:1;transform:scale(1)}      /* fade + slow ken-burns zoom */
+.hero-slide::after{ /* readability overlay so light text stays legible */
   content:"";position:absolute;inset:0;
-  background:
-    repeating-linear-gradient(115deg, rgba(255,255,255,.025) 0 2px, transparent 2px 9px);
-  mix-blend-mode:overlay;opacity:.6;
+  background:linear-gradient(105deg, rgba(15,13,10,.82) 0%, rgba(15,13,10,.42) 52%, rgba(15,13,10,.6) 100%);
 }
+.hero-dots{position:absolute;left:0;right:0;bottom:34px;z-index:3;display:flex;gap:11px;justify-content:center}
+.hero-dots button{
+  width:34px;height:3px;border:0;padding:0;cursor:pointer;border-radius:3px;
+  background:rgba(246,243,236,.34);transition:background .4s;
+}
+.hero-dots button.on{background:var(--ivory)}
 .hero .wrap{position:relative;z-index:2;width:100%}
 .hero-head{
   font-family:var(--latin);font-weight:300;
@@ -179,17 +185,15 @@ section.block{padding:clamp(80px,11vw,150px) 0;position:relative}
 .solutions{overflow:hidden}
 .sol-watermark{position:absolute;left:-2%;top:8%;font-family:var(--latin);font-size:34vw;line-height:1;
   color:rgba(154,132,96,.05);font-weight:500;pointer-events:none;user-select:none;z-index:0}
-.sol-track{display:flex;gap:20px;overflow-x:auto;padding:6px 28px 24px;scroll-snap-type:x mandatory;position:relative;z-index:1}
-.sol-track::-webkit-scrollbar{height:5px}
-.sol-track::-webkit-scrollbar-thumb{background:var(--stone);border-radius:9px}
+.sol-track{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;padding:6px 28px 24px;position:relative;z-index:1;max-width:var(--maxw);margin:0 auto}
 .sol-card{
-  flex:0 0 clamp(230px,27vw,300px);scroll-snap-align:start;
+  flex:0 1 clamp(230px,27vw,290px);
   background:var(--ivory);border:1px solid var(--line);overflow:hidden;
   transition:.4s ease;
 }
 .sol-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(28,26,22,.13)}
 .sol-img{height:230px;position:relative;overflow:hidden;display:flex;align-items:flex-end;color:#fff;padding:22px}
-.sol-img .ph{position:absolute;inset:0;z-index:0;transition:transform .8s ease}
+.sol-img .ph{position:absolute;inset:0;z-index:0;transition:transform .8s ease;background-size:cover;background-position:center}
 .sol-card:hover .sol-img .ph{transform:scale(1.06)}
 .sol-img::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(transparent 35%,rgba(20,18,14,.62))}
 .sol-img .t{position:relative;z-index:2;font-family:var(--serif);font-size:21px;font-weight:500;letter-spacing:.02em}
@@ -209,9 +213,13 @@ section.block{padding:clamp(80px,11vw,150px) 0;position:relative}
 
 /* ---------- PROFESSIONAL ---------- */
 .pro{background:var(--ivory)}
-.pro-visual{position:relative;height:clamp(320px,46vw,560px);background:linear-gradient(135deg,#4a463f,#1a1815);overflow:hidden;display:flex;align-items:center;justify-content:center}
-.pro-visual .note{color:rgba(255,255,255,.4);font-family:var(--latin);font-style:italic;font-size:18px;letter-spacing:.1em}
-.pro-visual::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 1px,transparent 1px 60px)}
+.pro-visual{position:relative;height:clamp(320px,46vw,560px);background:#1a1815;overflow:hidden;display:flex;align-items:flex-end}
+.pro-visual .pv-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 1.2s ease}
+.pro-visual:hover .pv-img{transform:scale(1.04)}
+.pro-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(15,13,10,.55))}
+.pro-visual .pv-cap{position:relative;z-index:2;padding:clamp(24px,4vw,44px);color:#f6f3ec}
+.pro-visual .pv-cap .k{font-family:var(--latin);font-style:italic;font-size:clamp(20px,2.4vw,30px);color:#e7dcc6}
+.pro-visual .pv-cap .s{font-family:var(--serif);font-size:clamp(13px,1.5vw,16px);font-weight:300;letter-spacing:.04em;opacity:.9;margin-top:4px}
 .pro-display{
   text-align:center;font-family:var(--latin);font-weight:300;
   font-size:clamp(40px,7vw,86px);line-height:1.04;margin:clamp(50px,7vw,78px) 0 8px;
@@ -248,21 +256,26 @@ section.block{padding:clamp(80px,11vw,150px) 0;position:relative}
 
 /* ---------- SPACE GALLERY ---------- */
 .space{background:var(--ivory);overflow:hidden}
-.space-row{display:flex;gap:14px;justify-content:center;align-items:flex-end;flex-wrap:nowrap;overflow-x:auto;padding-bottom:10px}
-.space-pod{flex:0 0 auto;width:clamp(96px,13vw,150px);border-radius:200px;overflow:hidden;position:relative;transition:.45s ease}
-.space-pod .ph{position:absolute;inset:0}
-.space-pod.center{width:clamp(220px,30vw,380px);border-radius:14px;color:#fff;display:flex;align-items:flex-end;padding:24px}
-.space-pod.center::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(15,13,10,.7))}
-.space-pod .cap{position:relative;z-index:2;font-size:13px;letter-spacing:.04em;line-height:1.5}
-.space-pod.center .cap b{font-family:var(--serif);font-weight:500;font-size:17px}
-.s1{height:clamp(150px,20vw,230px)} .s2{height:clamp(180px,24vw,280px)}
-.s3{height:clamp(220px,30vw,360px)} .s4{height:clamp(180px,24vw,280px)} .s5{height:clamp(150px,20vw,230px)}
-.gh1{background:linear-gradient(160deg,#9c9384,#4f483c)}
-.gh2{background:linear-gradient(160deg,#d6cfc1,#857d6c)}
-.gh3{background:linear-gradient(160deg,#2c2820,#121009)}
-.gh4{background:linear-gradient(160deg,#bcae97,#6a5d46)}
-.gh5{background:linear-gradient(160deg,#b6bdba,#5f6b67)}
+/* expanding gallery: hover an item -> it grows & image zooms.
+   moving the cursor right reveals the right image, left reveals the left. */
+.space-gallery{display:flex;gap:12px;height:clamp(300px,42vw,460px);max-width:var(--maxw);margin:0 auto}
+.sp-item{position:relative;flex:1 1 0;min-width:0;overflow:hidden;border-radius:16px;cursor:pointer;transition:flex-grow .6s cubic-bezier(.7,0,.2,1)}
+.sp-item .sp-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .9s ease}
+.sp-item::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(15,13,10,.74));opacity:.6;transition:opacity .5s}
+.sp-item:hover{flex-grow:3.4}
+.sp-item:hover .sp-img{transform:scale(1.09)}
+.sp-item:hover::after{opacity:1}
+.sp-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:22px;color:#f6f3ec;opacity:0;transform:translateY(12px);transition:.55s ease}
+.sp-item:hover .sp-cap{opacity:1;transform:none}
+.sp-cap b{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(15px,1.7vw,19px);letter-spacing:.02em}
+.sp-cap span{font-size:12px;letter-spacing:.05em;opacity:.85}
 .space-cta{display:flex;justify-content:center;margin-top:46px}
+@media(max-width:768px){
+  .space-gallery{overflow-x:auto;height:clamp(260px,62vw,340px);scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+  .sp-item{flex:0 0 76%;scroll-snap-align:center}
+  .sp-item:hover{flex-grow:0}
+  .sp-cap{opacity:1;transform:none}
+}
 
 /* ---------- CONTENT ---------- */
 .content{background:var(--cream)}
@@ -276,8 +289,12 @@ section.block{padding:clamp(80px,11vw,150px) 0;position:relative}
 .card-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .cardx{background:var(--ivory);border:1px solid var(--line);overflow:hidden;transition:.4s}
 .cardx:hover{transform:translateY(-5px);box-shadow:0 20px 44px rgba(28,26,22,.12)}
-.cardx .thumb{height:150px;position:relative;display:flex;align-items:center;justify-content:center}
-.cardx .thumb .badge{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.9);font-size:10px;letter-spacing:.08em;padding:4px 10px;border-radius:30px;font-weight:500;color:var(--ink)}
+.cardx .thumb{height:150px;position:relative;display:flex;align-items:center;justify-content:center;background-size:cover;background-position:center;overflow:hidden}
+.cardx .thumb::before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(15,13,10,.32));transition:transform .6s ease}
+.cardx:hover .thumb{background-size:108%}
+.cardx .thumb .badge{position:absolute;top:12px;left:12px;z-index:2;background:rgba(255,255,255,.92);font-size:10px;letter-spacing:.08em;padding:4px 10px;border-radius:30px;font-weight:500;color:var(--ink)}
+.cardx .thumb.yt::after{content:"▶";position:absolute;z-index:2;color:#fff;font-size:20px;width:54px;height:54px;display:flex;align-items:center;justify-content:center;background:rgba(20,18,14,.55);border-radius:50%;padding-left:4px;transition:.3s}
+.cardx:hover .thumb.yt::after{background:#ff3b30;transform:scale(1.08)}
 .cardx .thumb.yt .badge{background:#ff3b30;color:#fff}
 .cardx .body{padding:18px}
 .cardx .body h5{font-family:var(--serif);font-size:15px;font-weight:500;line-height:1.5;margin-bottom:10px;min-height:44px}
@@ -415,7 +432,11 @@ section.block{padding:clamp(80px,11vw,150px) 0;position:relative}
 
 <!-- ===== HERO ===== -->
 <section class="hero" id="home">
-  <div class="hero-bg"></div>
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide on" style="background-image:url(assets/img/hero-1.jpg)"></div>
+    <div class="hero-slide" style="background-image:url(assets/img/hero-2.jpg)"></div>
+    <div class="hero-slide" style="background-image:url(assets/img/hero-3.jpg)"></div>
+  </div>
   <div class="wrap">
     <h1 class="hero-head">Be Calm,<span class="rule"></span><em>Be Complete.</em></h1>
     <p class="hero-sub">고요한 깊이로 완성하는 섬세한 변화.<br>이룸피부과는 당신이 바라던 피부를 이룹니다.</p>
@@ -423,6 +444,11 @@ section.block{padding:clamp(80px,11vw,150px) 0;position:relative}
       <a href="#consult" class="btn-primary">상담 · 예약 알아보기 <span>→</span></a>
       <a href="about.html" class="btn-ghost">이룸 알아보기</a>
     </div>
+  </div>
+  <div class="hero-dots" id="heroDots" aria-label="히어로 슬라이드">
+    <button class="on" aria-label="슬라이드 1"></button>
+    <button aria-label="슬라이드 2"></button>
+    <button aria-label="슬라이드 3"></button>
   </div>
   <div class="scroll-cue"><span>Scroll</span><span class="bar"></span></div>
 </section>
@@ -439,27 +465,27 @@ section.block{padding:clamp(80px,11vw,150px) 0;position:relative}
   </div>
   <div class="sol-track reveal">
     <a class="sol-card" href="special.html">
-      <div class="sol-img"><div class="ph ph-1"></div><span class="t">특수질환</span></div>
+      <div class="sol-img"><div class="ph" style="background-image:url(assets/img/sol-1.jpg)"></div><span class="t">특수질환</span></div>
       <div class="sol-body"><p class="desc">난치성·만성 피부질환의 근본 원인에 접근합니다.</p><span class="more">자세히 보기</span></div>
     </a>
     <a class="sol-card" href="antiaging.html">
-      <div class="sol-img"><div class="ph ph-2"></div><span class="t">항노화</span></div>
+      <div class="sol-img"><div class="ph" style="background-image:url(assets/img/sol-2.jpg)"></div><span class="t">항노화</span></div>
       <div class="sol-body"><p class="desc">시간을 거스르는 섬세한 리프팅과 탄력 관리.</p><span class="more">자세히 보기</span></div>
     </a>
     <a class="sol-card" href="scar.html">
-      <div class="sol-img"><div class="ph ph-3"></div><span class="t">흉터</span></div>
+      <div class="sol-img"><div class="ph" style="background-image:url(assets/img/sol-3.jpg)"></div><span class="t">흉터</span></div>
       <div class="sol-body"><p class="desc">원인부터 분석하는 맞춤 흉터 치료.</p><span class="more">자세히 보기</span></div>
     </a>
     <a class="sol-card" href="acne.html">
-      <div class="sol-img"><div class="ph ph-4"></div><span class="t">여드름</span></div>
+      <div class="sol-img"><div class="ph" style="background-image:url(assets/img/sol-4.jpg)"></div><span class="t">여드름</span></div>
       <div class="sol-body"><p class="desc">반복되는 여드름, 피부 본연의 균형을 회복합니다.</p><span class="more">자세히 보기</span></div>
     </a>
     <a class="sol-card" href="pigment.html">
-      <div class="sol-img"><div class="ph ph-5"></div><span class="t">색소</span></div>
+      <div class="sol-img"><div class="ph" style="background-image:url(assets/img/sol-5.jpg)"></div><span class="t">색소</span></div>
       <div class="sol-body"><p class="desc">맑고 균일한 톤으로 — 색소 침착의 정밀 관리.</p><span class="more">자세히 보기</span></div>
     </a>
     <a class="sol-card" href="vascular.html">
-      <div class="sol-img"><div class="ph ph-6"></div><span class="t">홍조혈관</span></div>
+      <div class="sol-img"><div class="ph" style="background-image:url(assets/img/sol-6.jpg)"></div><span class="t">홍조혈관</span></div>
       <div class="sol-body"><p class="desc">진정과 강화의 균형으로 다스리는 민감 피부.</p><span class="more">자세히 보기</span></div>
     </a>
   </div>
@@ -474,7 +500,11 @@ section.block{padding:clamp(80px,11vw,150px) 0;position:relative}
   </div>
   <div class="wrap reveal">
     <div class="pro-visual">
-      <span class="note">— 진료실 / 의료진 사진 영역 —</span>
+      <div class="pv-img" style="background-image:url(assets/img/care-room.jpg)"></div>
+      <div class="pv-cap">
+        <div class="k">Delicate Care</div>
+        <div class="s">피부과 전문의가 진료의 처음부터 끝까지 함께합니다</div>
+      </div>
     </div>
   </div>
   <div class="wrap">
@@ -525,12 +555,12 @@ section.block{padding:clamp(80px,11vw,150px) 0;position:relative}
     </div>
   </div>
   <div class="wrap reveal">
-    <div class="space-row">
-      <div class="space-pod s1"><div class="ph gh1"></div></div>
-      <div class="space-pod s2"><div class="ph gh2"></div></div>
-      <div class="space-pod center s3"><div class="ph gh3"></div><span class="cap"><b>Private Suite</b><br>프라이빗 전용 케어룸</span></div>
-      <div class="space-pod s4"><div class="ph gh4"></div></div>
-      <div class="space-pod s5"><div class="ph gh5"></div></div>
+    <div class="space-gallery">
+      <div class="sp-item"><div class="sp-img" style="background-image:url(assets/img/space-1.jpg)"></div><div class="sp-cap"><b>Lobby</b><span>고요한 첫인상의 로비</span></div></div>
+      <div class="sp-item"><div class="sp-img" style="background-image:url(assets/img/space-3.jpg)"></div><div class="sp-cap"><b>Reception</b><span>따뜻하게 맞이하는 안내데스크</span></div></div>
+      <div class="sp-item"><div class="sp-img" style="background-image:url(assets/img/space-2.jpg)"></div><div class="sp-cap"><b>Private Suite</b><span>프라이빗 전용 케어룸</span></div></div>
+      <div class="sp-item"><div class="sp-img" style="background-image:url(assets/img/space-4.jpg)"></div><div class="sp-cap"><b>Lounge</b><span>편안한 대기 라운지</span></div></div>
+      <div class="sp-item"><div class="sp-img" style="background-image:url(assets/img/space-5.jpg)"></div><div class="sp-cap"><b>Treatment Room</b><span>섬세한 케어가 이뤄지는 진료실</span></div></div>
     </div>
   </div>
   <div class="space-cta reveal"><a href="about.html#brand-core" class="btn-dark">view more</a></div>
@@ -552,19 +582,19 @@ section.block{padding:clamp(80px,11vw,150px) 0;position:relative}
     </div>
     <div class="card-grid reveal">
       <a class="cardx" href="https://youtube.com" target="_blank" rel="noopener">
-        <div class="thumb yt tb1"><span class="badge">YOUTUBE</span></div>
+        <div class="thumb yt" style="background-image:url(assets/img/content-1.jpg)"><span class="badge">YOUTUBE</span></div>
         <div class="body"><h5>피부과 전문의가 알려주는 진짜 피부 관리법</h5><span class="date">2025 · IROOM</span></div>
       </a>
       <a class="cardx" href="https://youtube.com" target="_blank" rel="noopener">
-        <div class="thumb yt tb2"><span class="badge">YOUTUBE</span></div>
+        <div class="thumb yt" style="background-image:url(assets/img/content-2.jpg)"><span class="badge">YOUTUBE</span></div>
         <div class="body"><h5>레이저 치료, 시술 전 꼭 알아야 할 것들</h5><span class="date">2025 · IROOM</span></div>
       </a>
       <a class="cardx" href="notice.html">
-        <div class="thumb tb3"><span class="badge">BLOG</span></div>
+        <div class="thumb" style="background-image:url(assets/img/content-3.jpg)"><span class="badge">BLOG</span></div>
         <div class="body"><h5>피부가 좋아 보이고 싶다면, 무엇부터?</h5><span class="date">2025 · IROOM</span></div>
       </a>
       <a class="cardx" href="notice.html">
-        <div class="thumb tb4"><span class="badge">BLOG</span></div>
+        <div class="thumb" style="background-image:url(assets/img/content-4.jpg)"><span class="badge">BLOG</span></div>
         <div class="body"><h5>피부에 바르는 "오일"에 대한 오해와 진실</h5><span class="date">2025 · IROOM</span></div>
       </a>
     </div>
@@ -673,6 +703,23 @@ document.querySelector('.mm-acc-head').addEventListener('click',function(){
 // scroll reveal
 const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// hero auto-rotating slideshow
+(function(){
+  const slides=[...document.querySelectorAll('#heroSlides .hero-slide')];
+  const dots=[...document.querySelectorAll('#heroDots button')];
+  if(slides.length<2) return;
+  let i=0, timer;
+  const go=(n)=>{
+    i=(n+slides.length)%slides.length;
+    slides.forEach((s,k)=>s.classList.toggle('on',k===i));
+    dots.forEach((d,k)=>d.classList.toggle('on',k===i));
+  };
+  const play=()=>{timer=setInterval(()=>go(i+1),5500);};
+  const stop=()=>clearInterval(timer);
+  dots.forEach((d,k)=>d.addEventListener('click',()=>{stop();go(k);play();}));
+  play();
+})();
 </script>
 </body>
 </html>
