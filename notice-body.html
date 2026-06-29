@@ -1,0 +1,130 @@
+<!-- ===== IROOM 공지·이벤트 / 히어로 + 게시판 테마 (Imweb 코드블록, #18) =====
+     ※ 이 코드블록을 게시판 위젯(w20260629c05ca1cdc0fc1) "바로 위"에 넣으세요.
+        게시판 위젯 자체의 디자인(폰트·색)은 아래 CSS가 홈페이지 톤으로 맞춰줍니다. -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+.nt-body{
+  --ink:#1c1a16;--ink-soft:#363129;--ivory:#f6f3ec;--cream:#ece7dc;--stone:#cfc7b8;
+  --taupe:#a99a82;--gold:#9a8460;--gold-deep:#7d6a4c;--line:rgba(28,26,22,.14);
+  --serif:"Noto Serif KR",serif;--latin:"Cormorant Garamond",serif;
+  --sans:"Noto Sans KR","Pretendard",system-ui,sans-serif;--maxw:1180px;
+}
+.nt-body *{margin:0;padding:0;box-sizing:border-box}
+.nt-body{font-family:var(--sans);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+.nt-body a{color:inherit;text-decoration:none}
+.nt-body .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.nt-body .bleed{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);position:relative}
+.nt-body .eyebrow{font-family:var(--latin);font-style:italic;font-weight:400;letter-spacing:.06em;color:var(--gold);font-size:clamp(20px,2.4vw,30px);display:block}
+
+/* HERO */
+.nt-body .hero{min-height:46vh;display:flex;align-items:center;color:#f6f3ec;overflow:hidden}
+.nt-body .hero .stone{position:absolute;inset:0;z-index:0;background-color:var(--ink);background-image:radial-gradient(90% 70% at 78% 12%,rgba(154,132,96,.18),transparent 60%),radial-gradient(70% 80% at 8% 90%,rgba(255,255,255,.06),transparent 55%),linear-gradient(165deg,#232019 0%,#15130f 100%)}
+.nt-body .hero .wrap{position:relative;z-index:2}
+.nt-body .hero .crumb{font-size:11px;letter-spacing:.26em;color:var(--gold);margin-bottom:22px}
+.nt-body .hero h1{font-family:var(--latin);font-weight:300;font-size:clamp(44px,7vw,84px);line-height:1.04}
+.nt-body .hero h1 em{font-style:italic}
+.nt-body .hero .ko{margin-top:18px;font-family:var(--serif);font-weight:300;font-size:clamp(14px,1.7vw,18px);letter-spacing:.05em;color:rgba(246,243,236,.82);line-height:1.9}
+
+/* INTRO */
+.nt-body .intro{background:var(--ivory);padding:clamp(56px,7vw,96px) 0 clamp(20px,3vw,34px);text-align:center}
+.nt-body .intro h2{font-family:var(--serif);font-weight:500;font-size:clamp(24px,3.2vw,34px)}
+.nt-body .intro p{margin-top:14px;color:var(--ink-soft);font-weight:300;font-size:15px;line-height:1.95}
+.nt-body .intro .rule{width:46px;height:1px;background:var(--gold);margin:22px auto 0}
+</style>
+
+<div class="nt-body">
+  <!-- HERO -->
+  <section class="hero bleed">
+    <div class="stone"></div>
+    <div class="wrap">
+      <p class="crumb">NOTICE · EVENT</p>
+      <h1>News &amp; <em>Events.</em></h1>
+      <p class="ko">이룸피부과의 새로운 소식과 이벤트를 전해드립니다.</p>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro bleed">
+    <div class="wrap">
+      <span class="eyebrow">Notice &amp; Event</span>
+      <h2>공지 · 이벤트</h2>
+      <p>진료 안내, 휴진 공지, 시즌 이벤트 소식을 확인하세요.</p>
+      <div class="rule"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== 아임웹 게시판 위젯(w20260629c05ca1cdc0fc1) 홈페이지 톤 테마 ===== -->
+<style>
+/* 게시판 영역 배경/여백 */
+#w20260629c05ca1cdc0fc1{
+  font-family:"Noto Sans KR","Pretendard",system-ui,sans-serif;
+  color:#1c1a16;
+  background:#f6f3ec;
+  padding:clamp(20px,4vw,48px) 0 clamp(60px,9vw,110px);
+}
+#w20260629c05ca1cdc0fc1 .inside,
+#w20260629c05ca1cdc0fc1 .container{max-width:1180px;margin:0 auto;padding-left:28px;padding-right:28px}
+
+/* 링크 / 제목 */
+#w20260629c05ca1cdc0fc1 a{color:inherit;transition:color .2s}
+#w20260629c05ca1cdc0fc1 a:hover{color:#7d6a4c}
+#w20260629c05ca1cdc0fc1 .title,
+#w20260629c05ca1cdc0fc1 .subject,
+#w20260629c05ca1cdc0fc1 .list_title,
+#w20260629c05ca1cdc0fc1 .board_title{font-family:"Noto Serif KR",serif;font-weight:500}
+
+/* 리스트 행 / 구분선 */
+#w20260629c05ca1cdc0fc1 table{width:100%;border-collapse:collapse}
+#w20260629c05ca1cdc0fc1 thead th,
+#w20260629c05ca1cdc0fc1 .board_head{
+  border-top:1px solid #1c1a16;border-bottom:1px solid rgba(28,26,22,.14);
+  font-weight:500;font-size:13px;letter-spacing:.04em;color:#363129;background:transparent;
+}
+#w20260629c05ca1cdc0fc1 tbody td,
+#w20260629c05ca1cdc0fc1 .board_list li,
+#w20260629c05ca1cdc0fc1 .list_item{
+  border-bottom:1px solid rgba(28,26,22,.1);font-size:14px;color:#363129;
+}
+#w20260629c05ca1cdc0fc1 tbody tr:hover{background:rgba(236,231,220,.5)}
+
+/* 공지/말머리 뱃지 */
+#w20260629c05ca1cdc0fc1 .notice,
+#w20260629c05ca1cdc0fc1 .category,
+#w20260629c05ca1cdc0fc1 .prefix{color:#9a8460;font-weight:500}
+
+/* 페이지네이션 */
+#w20260629c05ca1cdc0fc1 .pagination a,
+#w20260629c05ca1cdc0fc1 .paging a,
+#w20260629c05ca1cdc0fc1 .page a{
+  border:1px solid rgba(28,26,22,.14);border-radius:40px;min-width:36px;height:36px;
+  display:inline-flex;align-items:center;justify-content:center;margin:0 3px;transition:.25s;
+}
+#w20260629c05ca1cdc0fc1 .pagination a:hover,
+#w20260629c05ca1cdc0fc1 .paging a:hover,
+#w20260629c05ca1cdc0fc1 .page a:hover{background:#ece7dc}
+#w20260629c05ca1cdc0fc1 .pagination .on,
+#w20260629c05ca1cdc0fc1 .pagination .active,
+#w20260629c05ca1cdc0fc1 .paging .on,
+#w20260629c05ca1cdc0fc1 .page .on,
+#w20260629c05ca1cdc0fc1 .page strong{background:#1c1a16;color:#f6f3ec;border-color:#1c1a16;border-radius:40px;min-width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center}
+
+/* 검색창 / 버튼 */
+#w20260629c05ca1cdc0fc1 input[type="text"],
+#w20260629c05ca1cdc0fc1 select{
+  border:1px solid rgba(28,26,22,.18);border-radius:40px;padding:9px 16px;font-size:13px;background:#fff;
+}
+#w20260629c05ca1cdc0fc1 .btn,
+#w20260629c05ca1cdc0fc1 button[type="submit"],
+#w20260629c05ca1cdc0fc1 .btn_search,
+#w20260629c05ca1cdc0fc1 .write_btn,
+#w20260629c05ca1cdc0fc1 .btn-write{
+  background:#1c1a16;color:#f6f3ec;border:0;border-radius:40px;padding:10px 22px;font-size:13px;
+  letter-spacing:.02em;cursor:pointer;transition:.25s;
+}
+#w20260629c05ca1cdc0fc1 .btn:hover,
+#w20260629c05ca1cdc0fc1 button[type="submit"]:hover,
+#w20260629c05ca1cdc0fc1 .btn_search:hover,
+#w20260629c05ca1cdc0fc1 .write_btn:hover,
+#w20260629c05ca1cdc0fc1 .btn-write:hover{background:#9a8460}
+</style>
