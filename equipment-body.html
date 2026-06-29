@@ -1,0 +1,296 @@
+<!-- ===== IROOM 시술장비 / 본문 전체 (히어로 + 장비) 단일 코드블록 ===== -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+.eq-body{
+  --ink:#1c1a16;--ink-soft:#363129;--ivory:#f6f3ec;--cream:#ece7dc;--stone:#cfc7b8;
+  --taupe:#a99a82;--gold:#9a8460;--gold-deep:#7d6a4c;--line:rgba(28,26,22,.14);
+  --serif:"Noto Serif KR",serif;--latin:"Cormorant Garamond",serif;
+  --sans:"Noto Sans KR","Pretendard",system-ui,sans-serif;--maxw:1180px;
+}
+.eq-body *{margin:0;padding:0;box-sizing:border-box}
+.eq-body{font-family:var(--sans);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+.eq-body a{color:inherit;text-decoration:none}
+.eq-body img{display:block;max-width:100%}
+.eq-body .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.eq-body .bleed{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);position:relative}
+.eq-body .anchor{scroll-margin-top:120px}
+.eq-body .eyebrow{font-family:var(--latin);font-style:italic;font-weight:400;letter-spacing:.06em;color:var(--gold);font-size:clamp(20px,2.4vw,30px);display:block}
+.eq-body .eyebrow-wrap{text-align:center;margin-bottom:clamp(34px,5vw,56px)}
+.eq-body .eyebrow-wrap h2{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3.6vw,40px);margin-top:12px}
+.eq-body .eyebrow-wrap p{margin-top:16px;color:var(--ink-soft);font-weight:300;font-size:15px;line-height:1.95}
+.eq-body .fade{animation:eqFade .9s ease both}
+@keyframes eqFade{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+/* HERO */
+.eq-body .hero{min-height:54vh;display:flex;align-items:center;color:#f6f3ec;overflow:hidden}
+.eq-body .hero .stone{position:absolute;inset:0;z-index:0;background-color:var(--ink);background-image:radial-gradient(90% 70% at 78% 12%,rgba(154,132,96,.18),transparent 60%),radial-gradient(70% 80% at 8% 90%,rgba(255,255,255,.06),transparent 55%),linear-gradient(165deg,#232019 0%,#15130f 100%)}
+.eq-body .hero .wrap{position:relative;z-index:2}
+.eq-body .hero .crumb{font-size:11px;letter-spacing:.26em;color:var(--gold);margin-bottom:22px}
+.eq-body .hero h1{font-family:var(--latin);font-weight:300;font-size:clamp(46px,8vw,96px);line-height:1.02}
+.eq-body .hero h1 em{font-style:italic}
+.eq-body .hero .ko{margin-top:18px;font-family:var(--serif);font-weight:300;font-size:clamp(14px,1.7vw,18px);letter-spacing:.05em;color:rgba(246,243,236,.82);line-height:1.9}
+
+/* SUB NAV */
+.eq-body .subnav{position:sticky;top:64px;z-index:50;background:rgba(246,243,236,.95);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.eq-body .subnav-inner{max-width:var(--maxw);margin:0 auto;display:flex;gap:6px;padding:0 28px;justify-content:center;flex-wrap:wrap}
+.eq-body .subnav a{padding:18px 22px;font-size:13.5px;font-weight:500;letter-spacing:.02em;color:var(--ink-soft);transition:.3s}
+.eq-body .subnav a:hover{color:var(--ink)}
+
+/* INTRO */
+.eq-body .intro{background:var(--ivory);padding:clamp(70px,10vw,130px) 0;text-align:center}
+.eq-body .intro .lead{max-width:760px;margin:0 auto;font-family:var(--serif);font-weight:300;font-size:clamp(18px,2.4vw,26px);line-height:1.85;color:var(--ink)}
+.eq-body .intro .lead em{font-style:normal;color:var(--gold-deep)}
+.eq-body .intro .sub{margin-top:22px;color:var(--ink-soft);font-weight:300;font-size:15px;line-height:1.95}
+
+/* SECTION */
+.eq-body .block{padding:clamp(70px,10vw,120px) 0}
+.eq-body #lifting{background:var(--cream)}
+.eq-body #laser{background:var(--ivory)}
+.eq-body #vascular{background:var(--cream)}
+.eq-body #regen{background:var(--ivory)}
+
+/* EQUIPMENT GRID */
+.eq-body .eq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.eq-body .eq-card{background:var(--ivory);border:1px solid var(--line);overflow:hidden;transition:.4s;display:flex;flex-direction:column}
+.eq-body #laser .eq-card,.eq-body #regen .eq-card{background:#fff}
+.eq-body .eq-card:hover{transform:translateY(-6px);box-shadow:0 22px 48px rgba(28,26,22,.12)}
+.eq-body .eq-photo{height:210px;position:relative;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-family:var(--latin);font-style:italic;font-size:14px;letter-spacing:.06em;background:linear-gradient(160deg,#4f463a,#1a1610)}
+.eq-body .eq-photo.p2{background:linear-gradient(160deg,#6b6052,#2c2620)}
+.eq-body .eq-photo.p3{background:linear-gradient(160deg,#3a342b,#15120d)}
+.eq-body .eq-photo.p4{background:linear-gradient(160deg,#8a7a5f,#3a3326)}
+.eq-body .eq-body-in{padding:26px;flex:1;display:flex;flex-direction:column}
+.eq-body .eq-tag{font-size:10.5px;letter-spacing:.2em;color:var(--gold);margin-bottom:12px}
+.eq-body .eq-card h4{font-family:var(--serif);font-size:20px;font-weight:500;margin-bottom:3px}
+.eq-body .eq-card h4 span{display:block;font-family:var(--latin);font-size:14px;font-style:italic;color:var(--taupe);margin-top:3px}
+.eq-body .eq-card p{margin-top:14px;font-size:13.5px;color:var(--ink-soft);font-weight:300;line-height:1.85}
+.eq-body .eq-card .feat{list-style:none;margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
+.eq-body .eq-card .feat li{font-size:12.5px;color:var(--ink-soft);font-weight:300;padding:3px 0 3px 14px;position:relative}
+.eq-body .eq-card .feat li::before{content:"—";position:absolute;left:0;color:var(--gold)}
+
+/* CTA */
+.eq-body .eq-cta{background:var(--ink);color:#efe9dd;text-align:center;padding:clamp(64px,8vw,100px) 0}
+.eq-body .eq-cta h3{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,36px);line-height:1.5}
+.eq-body .eq-cta p{margin-top:16px;color:var(--stone);font-weight:300;font-size:15px}
+.eq-body .eq-cta .btn{display:inline-block;margin-top:30px;background:var(--gold);color:#fff;padding:15px 40px;border-radius:46px;font-size:14px;letter-spacing:.03em;transition:.3s}
+.eq-body .eq-cta .btn:hover{background:var(--gold-deep);transform:translateY(-2px)}
+
+@media(max-width:1024px){.eq-body .eq-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.eq-body .wrap{padding:0 22px}.eq-body .subnav{top:57px}.eq-body .eq-grid{grid-template-columns:1fr}}
+</style>
+
+<div class="eq-body">
+  <!-- HERO -->
+  <section class="hero bleed">
+    <div class="stone"></div>
+    <div class="wrap">
+      <p class="crumb">EQUIPMENT · IROOM DERMATOLOGY</p>
+      <h1>Advanced <em>Technology.</em></h1>
+      <p class="ko">검증된 최신 장비로, 피부과 전문의의 정교한 진단과 시술을 완성합니다.<br>유행이 아닌 근거와 안전성을 기준으로 장비를 선택합니다.</p>
+    </div>
+  </section>
+
+  <!-- SUB NAV -->
+  <nav class="subnav bleed">
+    <div class="subnav-inner">
+      <a href="#lifting">리프팅 · 탄력</a>
+      <a href="#laser">레이저 · 색소</a>
+      <a href="#vascular">혈관 · 홍조</a>
+      <a href="#regen">재생 · 스킨부스터</a>
+    </div>
+  </nav>
+
+  <!-- INTRO -->
+  <section class="intro bleed">
+    <div class="wrap">
+      <p class="lead">장비보다 <em>진단이 먼저</em>입니다.<br>피부 상태에 맞는 장비를, 전문의가 직접 선택합니다.</p>
+      <p class="sub">이룸피부과는 식약처·FDA 인증을 받은 정품 장비만을 사용하며,<br>각 장비의 특성과 환자의 피부 타입을 고려해 가장 적합한 조합으로 시술합니다.</p>
+    </div>
+  </section>
+
+  <!-- 리프팅 · 탄력 -->
+  <section class="block bleed anchor" id="lifting">
+    <div class="wrap">
+      <div class="eyebrow-wrap fade">
+        <span class="eyebrow">Lifting &amp; Tightening</span>
+        <h2>리프팅 · 탄력</h2>
+        <p>초음파·고주파 에너지로 피부 깊은 층부터 끌어올립니다.</p>
+      </div>
+      <div class="eq-grid">
+        <div class="eq-card fade">
+          <div class="eq-photo">— 장비 이미지 —</div>
+          <div class="eq-body-in">
+            <p class="eq-tag">HIFU · 초음파 리프팅</p>
+            <h4>울쎄라<span>Ulthera</span></h4>
+            <p>SMAS층까지 도달하는 마이크로 집속 초음파로, 절개 없이 깊은 리프팅을 구현합니다.</p>
+            <ul class="feat"><li>FDA 승인 리프팅 장비</li><li>실시간 영상 가이드</li><li>턱·볼·눈가 탄력</li></ul>
+          </div>
+        </div>
+        <div class="eq-card fade">
+          <div class="eq-photo p2">— 장비 이미지 —</div>
+          <div class="eq-body-in">
+            <p class="eq-tag">고주파 · RF 탄력</p>
+            <h4>써마지 FLX<span>Thermage FLX</span></h4>
+            <p>고주파 열에너지로 진피 콜라겐을 수축·재생시켜 피부결과 탄력을 동시에 개선합니다.</p>
+            <ul class="feat"><li>4세대 FLX 팁</li><li>넓은 면적 탄력 개선</li><li>다운타임 최소화</li></ul>
+          </div>
+        </div>
+        <div class="eq-card fade">
+          <div class="eq-photo p3">— 장비 이미지 —</div>
+          <div class="eq-body-in">
+            <p class="eq-tag">HIFU · 윤곽 리프팅</p>
+            <h4>슈링크 유니버스<span>Shurink Universe</span></h4>
+            <p>부스터·리프팅 모드를 함께 사용해 탄력과 윤곽을 섬세하게 다듬습니다.</p>
+            <ul class="feat"><li>듀얼 모드(부스터+리프팅)</li><li>빠른 샷 속도</li><li>편안한 시술감</li></ul>
+          </div>
+        </div>
+        <div class="eq-card fade">
+          <div class="eq-photo p4">— 장비 이미지 —</div>
+          <div class="eq-body-in">
+            <p class="eq-tag">고주파 · 윤곽</p>
+            <h4>인모드<span>InMode</span></h4>
+            <p>RF와 흡입 기술로 탄력·윤곽·피부결을 복합적으로 케어합니다.</p>
+            <ul class="feat"><li>FX · Forma 핸드피스</li><li>이중턱·윤곽 관리</li><li>사계절 시술 가능</li></ul>
+          </div>
+        </div>
+        <div class="eq-card fade">
+          <div class="eq-photo">— 장비 이미지 —</div>
+          <div class="eq-body-in">
+            <p class="eq-tag">마이크로니들 RF</p>
+            <h4>포텐자<span>Potenza</span></h4>
+            <p>미세 바늘과 고주파를 결합해 모공·흉터·탄력을 정밀하게 개선합니다.</p>
+            <ul class="feat"><li>4가지 모드 조합</li><li>모공·잔주름 동시 케어</li><li>약물 전달(드럭 딜리버리)</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 레이저 · 색소 -->
+  <section class="block bleed anchor" id="laser">
+    <div class="wrap">
+      <div class="eyebrow-wrap fade">
+        <span class="eyebrow">Laser &amp; Pigment</span>
+        <h2>레이저 · 색소</h2>
+        <p>색소·잡티·문신·흉터까지, 파장별 레이저로 정교하게 접근합니다.</p>
+      </div>
+      <div class="eq-grid">
+        <div class="eq-card fade">
+          <div class="eq-photo p3">— 장비 이미지 —</div>
+          <div class="eq-body-in">
+            <p class="eq-tag">피코초 레이저</p>
+            <h4>피코슈어<span>PicoSure</span></h4>
+            <p>피코초 단위의 짧은 펄스로 색소를 미세하게 분해해, 주변 조직 손상을 줄입니다.</p>
+            <ul class="feat"><li>기미·잡티·문신 제거</li><li>포커스 렌즈로 모공·흉터</li><li>빠른 회복</li></ul>
+          </div>
+        </div>
+        <div class="eq-card fade">
+          <div class="eq-photo p2">— 장비 이미지 —</div>
+          <div class="eq-body-in">
+            <p class="eq-tag">토닝 · 색소</p>
+            <h4>피코플러스<span>PicoPlus</span></h4>
+            <p>다양한 파장으로 옅은 기미부터 진한 색소까지 단계적으로 케어합니다.</p>
+            <ul class="feat"><li>멀티 파장(1064·532·595·660)</li><li>색소·홍조 복합 케어</li><li>저자극 토닝</li></ul>
+          </div>
+        </div>
+        <div class="eq-card fade">
+          <div class="eq-photo p4">— 장비 이미지 —</div>
+          <div class="eq-body-in">
+            <p class="eq-tag">프락셔널 · 재생</p>
+            <h4>프락셀 듀얼<span>Fraxel Dual</span></h4>
+            <p>미세 레이저 빔으로 손상 피부를 재생시켜 흉터·모공·피부결을 개선합니다.</p>
+            <ul class="feat"><li>여드름 흉터·모공</li><li>피부 톤·결 개선</li><li>비박피 재생</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 혈관 · 홍조 -->
+  <section class="block bleed anchor" id="vascular">
+    <div class="wrap">
+      <div class="eyebrow-wrap fade">
+        <span class="eyebrow">Vascular &amp; Redness</span>
+        <h2>혈관 · 홍조</h2>
+        <p>붉은기·실핏줄·홍조를 선택적으로 가라앉힙니다.</p>
+      </div>
+      <div class="eq-grid">
+        <div class="eq-card fade">
+          <div class="eq-photo p2">— 장비 이미지 —</div>
+          <div class="eq-body-in">
+            <p class="eq-tag">혈관 · 색소 레이저</p>
+            <h4>엑셀브이 플러스<span>Excel V+</span></h4>
+            <p>두 가지 파장으로 혈관성 병변과 색소를 동시에 타깃해 홍조를 개선합니다.</p>
+            <ul class="feat"><li>안면홍조·실핏줄</li><li>주사(Rosacea) 케어</li><li>냉각 시스템 탑재</li></ul>
+          </div>
+        </div>
+        <div class="eq-card fade">
+          <div class="eq-photo">— 장비 이미지 —</div>
+          <div class="eq-body-in">
+            <p class="eq-tag">롱펄스 · 제모/혈관</p>
+            <h4>클라리티 II<span>Clarity II</span></h4>
+            <p>롱펄스 듀얼 파장으로 혈관·색소·제모까지 폭넓게 적용합니다.</p>
+            <ul class="feat"><li>안전한 냉각 모듈</li><li>혈관·잡티</li><li>피부 타입별 맞춤</li></ul>
+          </div>
+        </div>
+        <div class="eq-card fade">
+          <div class="eq-photo p4">— 장비 이미지 —</div>
+          <div class="eq-body-in">
+            <p class="eq-tag">IPL · 토탈 톤업</p>
+            <h4>루메니스 IPL<span>Lumecca IPL</span></h4>
+            <p>광대역 빛으로 붉은기와 잡티를 한 번에 정돈해 균일한 피부 톤을 만듭니다.</p>
+            <ul class="feat"><li>색소·홍조 동시 개선</li><li>전체 톤 균일화</li><li>짧은 시술 시간</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 재생 · 스킨부스터 -->
+  <section class="block bleed anchor" id="regen">
+    <div class="wrap">
+      <div class="eyebrow-wrap fade">
+        <span class="eyebrow">Regeneration &amp; Booster</span>
+        <h2>재생 · 스킨부스터</h2>
+        <p>진정과 재생으로 피부 본연의 건강을 회복합니다.</p>
+      </div>
+      <div class="eq-grid">
+        <div class="eq-card fade">
+          <div class="eq-photo p3">— 장비 이미지 —</div>
+          <div class="eq-body-in">
+            <p class="eq-tag">미세진동 · 재생</p>
+            <h4>LDM<span>Local Dynamic Micromassage</span></h4>
+            <p>초당 수백만 회의 미세진동으로 피부를 진정시키고 재생을 돕습니다.</p>
+            <ul class="feat"><li>민감·홍조 진정</li><li>시술 후 회복 케어</li><li>탄력·결 개선</li></ul>
+          </div>
+        </div>
+        <div class="eq-card fade">
+          <div class="eq-photo p4">— 장비 이미지 —</div>
+          <div class="eq-body-in">
+            <p class="eq-tag">레이저 토닝 · 결</p>
+            <h4>제네시스<span>Laser Genesis</span></h4>
+            <p>진피를 부드럽게 자극해 모공·홍조·잔주름과 피부결을 개선합니다.</p>
+            <ul class="feat"><li>비박피 · 다운타임 적음</li><li>모공·홍조</li><li>은은한 광채</li></ul>
+          </div>
+        </div>
+        <div class="eq-card fade">
+          <div class="eq-photo p2">— 장비 이미지 —</div>
+          <div class="eq-body-in">
+            <p class="eq-tag">전기천공 · 스킨부스터</p>
+            <h4>인트라셀 / 일렉트로포레이션<span>Skin Booster</span></h4>
+            <p>유효 성분을 피부 속으로 효율적으로 전달해 수분·탄력을 채웁니다.</p>
+            <ul class="feat"><li>속건조·잔주름</li><li>피부 장벽 강화</li><li>무바늘 전달 옵션</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="eq-cta bleed">
+    <div class="wrap">
+      <h3>어떤 장비가 내 피부에 맞을지 궁금하신가요?</h3>
+      <p>피부과 전문의가 진단 후 가장 적합한 장비와 시술을 안내해 드립니다.</p>
+      <a class="btn" href="https://iroomskin.imweb.me/">상담 · 예약하기</a>
+    </div>
+  </section>
+</div>

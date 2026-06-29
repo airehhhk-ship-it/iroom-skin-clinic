@@ -107,7 +107,7 @@
               <li><a href="https://iroomskin.imweb.me/16#doctors">의료진소개</a></li>
               <li><a href="https://iroomskin.imweb.me/16#location">진료시간 / 오시는길</a></li>
               <li class="div"></li>
-              <li><a href="https://iroomskin.imweb.me/">시술장비</a></li>
+              <li><a href="https://iroomskin.imweb.me/17">시술장비</a></li>
               <li><a href="https://iroomskin.imweb.me/">공지 / 이벤트</a></li>
               <li><a href="https://youtube.com" target="_blank" rel="noopener">유튜브</a></li>
             </ul>
@@ -139,7 +139,7 @@
           <a href="https://iroomskin.imweb.me/16#brand-core">브랜드코어</a>
           <a href="https://iroomskin.imweb.me/16#doctors">의료진소개</a>
           <a href="https://iroomskin.imweb.me/16#location">진료시간 / 오시는길</a>
-          <a href="https://iroomskin.imweb.me/">시술장비</a>
+          <a href="https://iroomskin.imweb.me/17">시술장비</a>
           <a href="https://iroomskin.imweb.me/">공지 / 이벤트</a>
           <a href="https://youtube.com" target="_blank" rel="noopener">유튜브</a>
         </div>
