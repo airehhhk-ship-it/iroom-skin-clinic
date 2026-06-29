@@ -1,0 +1,109 @@
+<!-- ===== IROOM 홍조혈관 / 본문 단일 코드블록 ===== -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+.pg-vas{
+  --ink:#1c1a16;--ink-soft:#363129;--ivory:#f6f3ec;--cream:#ece7dc;--stone:#cfc7b8;
+  --taupe:#a99a82;--gold:#9a8460;--gold-deep:#7d6a4c;--line:rgba(28,26,22,.14);
+  --serif:"Noto Serif KR",serif;--latin:"Cormorant Garamond",serif;
+  --sans:"Noto Sans KR","Pretendard",system-ui,sans-serif;--maxw:1180px;
+}
+.pg-vas *{margin:0;padding:0;box-sizing:border-box}
+.pg-vas{font-family:var(--sans);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+.pg-vas a{color:inherit;text-decoration:none}
+.pg-vas .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.pg-vas .bleed{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);position:relative}
+.pg-vas .eyebrow{font-family:var(--latin);font-style:italic;font-weight:400;letter-spacing:.06em;color:var(--gold);font-size:clamp(20px,2.4vw,30px);display:block}
+.pg-vas .eyebrow-wrap{text-align:center;margin-bottom:clamp(34px,5vw,56px)}
+.pg-vas .eyebrow-wrap h2{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3.6vw,40px);margin-top:12px}
+.pg-vas .eyebrow-wrap p{margin-top:16px;color:var(--ink-soft);font-weight:300;font-size:15px;line-height:1.95}
+.pg-vas .fade{animation:pgFadeVas .9s ease both}
+@keyframes pgFadeVas{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.pg-vas .hero{min-height:50vh;display:flex;align-items:center;color:#f6f3ec;overflow:hidden}
+.pg-vas .hero .stone{position:absolute;inset:0;z-index:0;background-color:var(--ink);background-image:radial-gradient(90% 70% at 78% 12%,rgba(154,132,96,.18),transparent 60%),radial-gradient(70% 80% at 8% 90%,rgba(255,255,255,.06),transparent 55%),linear-gradient(165deg,#232019 0%,#15130f 100%)}
+.pg-vas .hero .wrap{position:relative;z-index:2}
+.pg-vas .hero .crumb{font-size:11px;letter-spacing:.26em;color:var(--gold);margin-bottom:22px}
+.pg-vas .hero h1{font-family:var(--latin);font-weight:300;font-size:clamp(44px,7vw,88px);line-height:1.04}
+.pg-vas .hero h1 em{font-style:italic}
+.pg-vas .hero .ko{margin-top:18px;font-family:var(--serif);font-weight:300;font-size:clamp(14px,1.7vw,18px);letter-spacing:.05em;color:rgba(246,243,236,.82);line-height:1.9}
+.pg-vas .intro{background:var(--ivory);padding:clamp(70px,10vw,120px) 0;text-align:center}
+.pg-vas .intro .lead{max-width:760px;margin:0 auto;font-family:var(--serif);font-weight:300;font-size:clamp(18px,2.4vw,26px);line-height:1.85}
+.pg-vas .intro .lead em{font-style:normal;color:var(--gold-deep)}
+.pg-vas .intro .sub{margin-top:20px;color:var(--ink-soft);font-weight:300;font-size:15px;line-height:1.95}
+.pg-vas .symp{background:var(--cream);padding:clamp(70px,10vw,120px) 0}
+.pg-vas .chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:840px;margin:0 auto}
+.pg-vas .chip{background:var(--ivory);border:1px solid var(--line);border-radius:40px;padding:12px 24px;font-size:14px;color:var(--ink-soft);transition:.3s}
+.pg-vas .chip:hover{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.pg-vas .treat{background:var(--ivory);padding:clamp(70px,10vw,120px) 0}
+.pg-vas .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pg-vas .t-card{background:#fff;border:1px solid var(--line);padding:34px 28px;transition:.4s}
+.pg-vas .t-card:hover{transform:translateY(-6px);box-shadow:0 22px 48px rgba(28,26,22,.1)}
+.pg-vas .t-card .n{font-family:var(--latin);font-style:italic;font-size:22px;color:var(--gold);margin-bottom:14px}
+.pg-vas .t-card h4{font-family:var(--serif);font-size:20px;font-weight:500;margin-bottom:12px}
+.pg-vas .t-card p{font-size:13.5px;color:var(--ink-soft);font-weight:300;line-height:1.85}
+.pg-vas .cta{background:var(--ink);color:#efe9dd;text-align:center;padding:clamp(64px,8vw,100px) 0}
+.pg-vas .cta h3{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,36px);line-height:1.5}
+.pg-vas .cta p{margin-top:16px;color:var(--stone);font-weight:300;font-size:15px}
+.pg-vas .cta .btn{display:inline-block;margin-top:30px;background:var(--gold);color:#fff;padding:15px 40px;border-radius:46px;font-size:14px;transition:.3s}
+.pg-vas .cta .btn:hover{background:var(--gold-deep);transform:translateY(-2px)}
+@media(max-width:1024px){.pg-vas .t-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.pg-vas .wrap{padding:0 22px}.pg-vas .t-grid{grid-template-columns:1fr}}
+</style>
+
+<div class="pg-vas">
+  <section class="hero bleed">
+    <div class="stone"></div>
+    <div class="wrap">
+      <p class="crumb">REDNESS &amp; VESSEL · IROOM DERMATOLOGY</p>
+      <h1>Calm <em>Complexion.</em></h1>
+      <p class="ko">쉽게 붉어지는 피부와 실핏줄, 선택적으로 가라앉혀 진정시킵니다.</p>
+    </div>
+  </section>
+
+  <section class="intro bleed">
+    <div class="wrap">
+      <p class="lead">홍조는 <em>진정과 혈관 관리</em>를 함께해야 합니다.<br>붉기의 원인을 먼저 봅니다.</p>
+      <p class="sub">예민함, 확장된 혈관, 주사(rosacea) 등 홍조의 원인은 다양합니다.<br>이룸피부과는 원인을 구분해 혈관 치료와 피부 장벽 케어를 병행합니다.</p>
+    </div>
+  </section>
+
+  <section class="symp bleed">
+    <div class="wrap">
+      <div class="eyebrow-wrap fade">
+        <span class="eyebrow">Symptoms</span>
+        <h2>이런 증상을 치료합니다</h2>
+        <p>붉기의 형태와 원인에 맞춰 접근합니다.</p>
+      </div>
+      <div class="chips fade">
+        <span class="chip">안면홍조</span><span class="chip">실핏줄(모세혈관 확장)</span><span class="chip">주사(Rosacea)</span>
+        <span class="chip">코 · 볼 붉은기</span><span class="chip">열감 · 화끈거림</span><span class="chip">예민성 피부</span>
+        <span class="chip">붉은 여드름 자국</span><span class="chip">다리 실핏줄</span><span class="chip">혈관종 · 화염상모반</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="treat bleed">
+    <div class="wrap">
+      <div class="eyebrow-wrap fade">
+        <span class="eyebrow">Treatment</span>
+        <h2>치료 방법</h2>
+        <p>혈관 레이저와 진정 케어를 함께 적용합니다.</p>
+      </div>
+      <div class="t-grid">
+        <div class="t-card fade"><div class="n">01</div><h4>혈관 레이저</h4><p>엑셀브이·브이빔으로 확장된 혈관과 붉은기를 선택적으로 줄입니다.</p></div>
+        <div class="t-card fade"><div class="n">02</div><h4>IPL</h4><p>넓은 면적의 붉은기와 색소를 함께 정돈해 균일한 톤을 만듭니다.</p></div>
+        <div class="t-card fade"><div class="n">03</div><h4>제네시스 토닝</h4><p>은은한 열로 피부를 진정시키고 붉은기와 모공을 개선합니다.</p></div>
+        <div class="t-card fade"><div class="n">04</div><h4>주사(Rosacea) 관리</h4><p>약물과 레이저를 병행해 만성 홍조와 염증을 조절합니다.</p></div>
+        <div class="t-card fade"><div class="n">05</div><h4>장벽 · 진정 케어</h4><p>LDM·재생 관리로 예민한 피부 장벽을 강화합니다.</p></div>
+        <div class="t-card fade"><div class="n">06</div><h4>생활 가이드</h4><p>홍조를 악화시키는 자극 요인을 줄이는 방법을 안내합니다.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta bleed">
+    <div class="wrap">
+      <h3>쉽게 붉어지는 피부, 원인부터 진정시키세요.</h3>
+      <p>피부과 전문의가 홍조 원인을 진단해 맞춤 플랜을 안내합니다.</p>
+      <a class="btn" href="https://iroomskin.imweb.me/">상담 · 예약하기</a>
+    </div>
+  </section>
+</div>

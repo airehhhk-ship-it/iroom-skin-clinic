@@ -1,0 +1,109 @@
+<!-- ===== IROOM 색소 / 본문 단일 코드블록 ===== -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+.pg-pig{
+  --ink:#1c1a16;--ink-soft:#363129;--ivory:#f6f3ec;--cream:#ece7dc;--stone:#cfc7b8;
+  --taupe:#a99a82;--gold:#9a8460;--gold-deep:#7d6a4c;--line:rgba(28,26,22,.14);
+  --serif:"Noto Serif KR",serif;--latin:"Cormorant Garamond",serif;
+  --sans:"Noto Sans KR","Pretendard",system-ui,sans-serif;--maxw:1180px;
+}
+.pg-pig *{margin:0;padding:0;box-sizing:border-box}
+.pg-pig{font-family:var(--sans);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+.pg-pig a{color:inherit;text-decoration:none}
+.pg-pig .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.pg-pig .bleed{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);position:relative}
+.pg-pig .eyebrow{font-family:var(--latin);font-style:italic;font-weight:400;letter-spacing:.06em;color:var(--gold);font-size:clamp(20px,2.4vw,30px);display:block}
+.pg-pig .eyebrow-wrap{text-align:center;margin-bottom:clamp(34px,5vw,56px)}
+.pg-pig .eyebrow-wrap h2{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3.6vw,40px);margin-top:12px}
+.pg-pig .eyebrow-wrap p{margin-top:16px;color:var(--ink-soft);font-weight:300;font-size:15px;line-height:1.95}
+.pg-pig .fade{animation:pgFadePig .9s ease both}
+@keyframes pgFadePig{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.pg-pig .hero{min-height:50vh;display:flex;align-items:center;color:#f6f3ec;overflow:hidden}
+.pg-pig .hero .stone{position:absolute;inset:0;z-index:0;background-color:var(--ink);background-image:radial-gradient(90% 70% at 78% 12%,rgba(154,132,96,.18),transparent 60%),radial-gradient(70% 80% at 8% 90%,rgba(255,255,255,.06),transparent 55%),linear-gradient(165deg,#232019 0%,#15130f 100%)}
+.pg-pig .hero .wrap{position:relative;z-index:2}
+.pg-pig .hero .crumb{font-size:11px;letter-spacing:.26em;color:var(--gold);margin-bottom:22px}
+.pg-pig .hero h1{font-family:var(--latin);font-weight:300;font-size:clamp(44px,7vw,88px);line-height:1.04}
+.pg-pig .hero h1 em{font-style:italic}
+.pg-pig .hero .ko{margin-top:18px;font-family:var(--serif);font-weight:300;font-size:clamp(14px,1.7vw,18px);letter-spacing:.05em;color:rgba(246,243,236,.82);line-height:1.9}
+.pg-pig .intro{background:var(--ivory);padding:clamp(70px,10vw,120px) 0;text-align:center}
+.pg-pig .intro .lead{max-width:760px;margin:0 auto;font-family:var(--serif);font-weight:300;font-size:clamp(18px,2.4vw,26px);line-height:1.85}
+.pg-pig .intro .lead em{font-style:normal;color:var(--gold-deep)}
+.pg-pig .intro .sub{margin-top:20px;color:var(--ink-soft);font-weight:300;font-size:15px;line-height:1.95}
+.pg-pig .symp{background:var(--cream);padding:clamp(70px,10vw,120px) 0}
+.pg-pig .chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:840px;margin:0 auto}
+.pg-pig .chip{background:var(--ivory);border:1px solid var(--line);border-radius:40px;padding:12px 24px;font-size:14px;color:var(--ink-soft);transition:.3s}
+.pg-pig .chip:hover{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.pg-pig .treat{background:var(--ivory);padding:clamp(70px,10vw,120px) 0}
+.pg-pig .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pg-pig .t-card{background:#fff;border:1px solid var(--line);padding:34px 28px;transition:.4s}
+.pg-pig .t-card:hover{transform:translateY(-6px);box-shadow:0 22px 48px rgba(28,26,22,.1)}
+.pg-pig .t-card .n{font-family:var(--latin);font-style:italic;font-size:22px;color:var(--gold);margin-bottom:14px}
+.pg-pig .t-card h4{font-family:var(--serif);font-size:20px;font-weight:500;margin-bottom:12px}
+.pg-pig .t-card p{font-size:13.5px;color:var(--ink-soft);font-weight:300;line-height:1.85}
+.pg-pig .cta{background:var(--ink);color:#efe9dd;text-align:center;padding:clamp(64px,8vw,100px) 0}
+.pg-pig .cta h3{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,36px);line-height:1.5}
+.pg-pig .cta p{margin-top:16px;color:var(--stone);font-weight:300;font-size:15px}
+.pg-pig .cta .btn{display:inline-block;margin-top:30px;background:var(--gold);color:#fff;padding:15px 40px;border-radius:46px;font-size:14px;transition:.3s}
+.pg-pig .cta .btn:hover{background:var(--gold-deep);transform:translateY(-2px)}
+@media(max-width:1024px){.pg-pig .t-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.pg-pig .wrap{padding:0 22px}.pg-pig .t-grid{grid-template-columns:1fr}}
+</style>
+
+<div class="pg-pig">
+  <section class="hero bleed">
+    <div class="stone"></div>
+    <div class="wrap">
+      <p class="crumb">PIGMENT · IROOM DERMATOLOGY</p>
+      <h1>Even <em>Tone.</em></h1>
+      <p class="ko">기미·잡티·검버섯, 색소의 종류와 깊이를 구분해 정교하게 접근합니다.</p>
+    </div>
+  </section>
+
+  <section class="intro bleed">
+    <div class="wrap">
+      <p class="lead">색소는 <em>깊이가 다릅니다.</em><br>표피와 진피, 접근이 달라야 합니다.</p>
+      <p class="sub">같은 갈색 점이라도 표피·진피·복합형에 따라 치료가 달라집니다.<br>이룸피부과는 색소를 정확히 감별해 파장과 강도를 맞춤 설정합니다.</p>
+    </div>
+  </section>
+
+  <section class="symp bleed">
+    <div class="wrap">
+      <div class="eyebrow-wrap fade">
+        <span class="eyebrow">Symptoms</span>
+        <h2>이런 색소를 치료합니다</h2>
+        <p>종류와 깊이에 따라 레이저를 다르게 적용합니다.</p>
+      </div>
+      <div class="chips fade">
+        <span class="chip">기미</span><span class="chip">주근깨</span><span class="chip">검버섯</span>
+        <span class="chip">잡티 · 흑자</span><span class="chip">오타모반</span><span class="chip">밀크커피반점</span>
+        <span class="chip">색소침착(PIH)</span><span class="chip">칙칙한 피부톤</span><span class="chip">문신 제거</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="treat bleed">
+    <div class="wrap">
+      <div class="eyebrow-wrap fade">
+        <span class="eyebrow">Treatment</span>
+        <h2>치료 방법</h2>
+        <p>색소 타입에 맞춰 레이저·약물을 조합합니다.</p>
+      </div>
+      <div class="t-grid">
+        <div class="t-card fade"><div class="n">01</div><h4>피코 레이저</h4><p>피코슈어·피코플러스로 색소를 미세하게 분해해 자극을 줄입니다.</p></div>
+        <div class="t-card fade"><div class="n">02</div><h4>레이저 토닝</h4><p>기미·칙칙함을 단계적으로 옅게 만들어 톤을 균일하게 정돈합니다.</p></div>
+        <div class="t-card fade"><div class="n">03</div><h4>IPL</h4><p>옅은 잡티와 붉은기를 함께 케어해 전체 톤을 밝힙니다.</p></div>
+        <div class="t-card fade"><div class="n">04</div><h4>큐스위치 레이저</h4><p>진한 점·흑자·문신 등 짙은 색소를 선택적으로 제거합니다.</p></div>
+        <div class="t-card fade"><div class="n">05</div><h4>약물 · 재생 관리</h4><p>미백 약물과 재생 케어로 시술 효과를 높이고 재발을 줄입니다.</p></div>
+        <div class="t-card fade"><div class="n">06</div><h4>자외선 차단 가이드</h4><p>색소 재발의 핵심인 자외선 관리 방법을 함께 안내합니다.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta bleed">
+    <div class="wrap">
+      <h3>색소, 정확한 감별이 깨끗한 결과를 만듭니다.</h3>
+      <p>피부과 전문의가 색소 깊이를 진단해 맞춤 플랜을 안내합니다.</p>
+      <a class="btn" href="https://iroomskin.imweb.me/">상담 · 예약하기</a>
+    </div>
+  </section>
+</div>

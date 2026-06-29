@@ -1,0 +1,110 @@
+<!-- ===== IROOM 특수질환 / 본문 단일 코드블록 ===== -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+.pg-special{
+  --ink:#1c1a16;--ink-soft:#363129;--ivory:#f6f3ec;--cream:#ece7dc;--stone:#cfc7b8;
+  --taupe:#a99a82;--gold:#9a8460;--gold-deep:#7d6a4c;--line:rgba(28,26,22,.14);
+  --serif:"Noto Serif KR",serif;--latin:"Cormorant Garamond",serif;
+  --sans:"Noto Sans KR","Pretendard",system-ui,sans-serif;--maxw:1180px;
+}
+.pg-special *{margin:0;padding:0;box-sizing:border-box}
+.pg-special{font-family:var(--sans);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+.pg-special a{color:inherit;text-decoration:none}
+.pg-special .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.pg-special .bleed{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);position:relative}
+.pg-special .eyebrow{font-family:var(--latin);font-style:italic;font-weight:400;letter-spacing:.06em;color:var(--gold);font-size:clamp(20px,2.4vw,30px);display:block}
+.pg-special .eyebrow-wrap{text-align:center;margin-bottom:clamp(34px,5vw,56px)}
+.pg-special .eyebrow-wrap h2{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3.6vw,40px);margin-top:12px}
+.pg-special .eyebrow-wrap p{margin-top:16px;color:var(--ink-soft);font-weight:300;font-size:15px;line-height:1.95}
+.pg-special .fade{animation:pgFadeSpecial .9s ease both}
+@keyframes pgFadeSpecial{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.pg-special .hero{min-height:50vh;display:flex;align-items:center;color:#f6f3ec;overflow:hidden}
+.pg-special .hero .stone{position:absolute;inset:0;z-index:0;background-color:var(--ink);background-image:radial-gradient(90% 70% at 78% 12%,rgba(154,132,96,.18),transparent 60%),radial-gradient(70% 80% at 8% 90%,rgba(255,255,255,.06),transparent 55%),linear-gradient(165deg,#232019 0%,#15130f 100%)}
+.pg-special .hero .wrap{position:relative;z-index:2}
+.pg-special .hero .crumb{font-size:11px;letter-spacing:.26em;color:var(--gold);margin-bottom:22px}
+.pg-special .hero h1{font-family:var(--latin);font-weight:300;font-size:clamp(44px,7vw,88px);line-height:1.04}
+.pg-special .hero h1 em{font-style:italic}
+.pg-special .hero .ko{margin-top:18px;font-family:var(--serif);font-weight:300;font-size:clamp(14px,1.7vw,18px);letter-spacing:.05em;color:rgba(246,243,236,.82);line-height:1.9}
+.pg-special .intro{background:var(--ivory);padding:clamp(70px,10vw,120px) 0;text-align:center}
+.pg-special .intro .lead{max-width:760px;margin:0 auto;font-family:var(--serif);font-weight:300;font-size:clamp(18px,2.4vw,26px);line-height:1.85}
+.pg-special .intro .lead em{font-style:normal;color:var(--gold-deep)}
+.pg-special .intro .sub{margin-top:20px;color:var(--ink-soft);font-weight:300;font-size:15px;line-height:1.95}
+.pg-special .symp{background:var(--cream);padding:clamp(70px,10vw,120px) 0}
+.pg-special .chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:840px;margin:0 auto}
+.pg-special .chip{background:var(--ivory);border:1px solid var(--line);border-radius:40px;padding:12px 24px;font-size:14px;color:var(--ink-soft);transition:.3s}
+.pg-special .chip:hover{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.pg-special .treat{background:var(--ivory);padding:clamp(70px,10vw,120px) 0}
+.pg-special .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pg-special .t-card{background:#fff;border:1px solid var(--line);padding:34px 28px;transition:.4s}
+.pg-special .t-card:hover{transform:translateY(-6px);box-shadow:0 22px 48px rgba(28,26,22,.1)}
+.pg-special .t-card .n{font-family:var(--latin);font-style:italic;font-size:22px;color:var(--gold);margin-bottom:14px}
+.pg-special .t-card h4{font-family:var(--serif);font-size:20px;font-weight:500;margin-bottom:12px}
+.pg-special .t-card p{font-size:13.5px;color:var(--ink-soft);font-weight:300;line-height:1.85}
+.pg-special .cta{background:var(--ink);color:#efe9dd;text-align:center;padding:clamp(64px,8vw,100px) 0}
+.pg-special .cta h3{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,36px);line-height:1.5}
+.pg-special .cta p{margin-top:16px;color:var(--stone);font-weight:300;font-size:15px}
+.pg-special .cta .btn{display:inline-block;margin-top:30px;background:var(--gold);color:#fff;padding:15px 40px;border-radius:46px;font-size:14px;transition:.3s}
+.pg-special .cta .btn:hover{background:var(--gold-deep);transform:translateY(-2px)}
+@media(max-width:1024px){.pg-special .t-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.pg-special .wrap{padding:0 22px}.pg-special .t-grid{grid-template-columns:1fr}}
+</style>
+
+<div class="pg-special">
+  <section class="hero bleed">
+    <div class="stone"></div>
+    <div class="wrap">
+      <p class="crumb">SPECIAL CARE · IROOM DERMATOLOGY</p>
+      <h1>Special <em>Conditions.</em></h1>
+      <p class="ko">난치성·만성 피부질환, 피부과 전문의의 정확한 진단에서 시작합니다.</p>
+    </div>
+  </section>
+
+  <section class="intro bleed">
+    <div class="wrap">
+      <p class="lead">증상이 비슷해도 <em>원인은 다릅니다.</em><br>정확한 진단이 치료의 절반입니다.</p>
+      <p class="sub">이룸피부과는 만성·재발성 피부질환을 단순 증상 완화가 아닌<br>원인 중심으로 접근해, 장기적인 관리 계획을 함께 설계합니다.</p>
+    </div>
+  </section>
+
+  <section class="symp bleed">
+    <div class="wrap">
+      <div class="eyebrow-wrap fade">
+        <span class="eyebrow">Symptoms</span>
+        <h2>이런 질환을 진료합니다</h2>
+        <p>진단이 어렵거나 오래 지속되는 피부 문제를 함께 살펴봅니다.</p>
+      </div>
+      <div class="chips fade">
+        <span class="chip">건선</span><span class="chip">백반증</span><span class="chip">아토피 피부염</span>
+        <span class="chip">만성 두드러기</span><span class="chip">탈모</span><span class="chip">대상포진 후 관리</span>
+        <span class="chip">한관종 · 비립종</span><span class="chip">사마귀 · 티눈</span><span class="chip">손발톱 질환</span>
+        <span class="chip">다한증</span><span class="chip">백선(무좀)</span><span class="chip">피부 양성종양</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="treat bleed">
+    <div class="wrap">
+      <div class="eyebrow-wrap fade">
+        <span class="eyebrow">Treatment</span>
+        <h2>치료 방법</h2>
+        <p>질환과 피부 상태에 맞춰 약물·시술을 단계적으로 적용합니다.</p>
+      </div>
+      <div class="t-grid">
+        <div class="t-card fade"><div class="n">01</div><h4>정밀 진단</h4><p>병력 청취와 피부 검사를 통해 원인을 구분하고 질환을 감별합니다.</p></div>
+        <div class="t-card fade"><div class="n">02</div><h4>약물 · 광선 치료</h4><p>국소·전신 약물과 엑시머·자외선 광선치료 등으로 염증과 증상을 조절합니다.</p></div>
+        <div class="t-card fade"><div class="n">03</div><h4>시술 · 제거</h4><p>양성종양·사마귀 등은 레이저·냉동치료로 안전하게 제거합니다.</p></div>
+        <div class="t-card fade"><div class="n">04</div><h4>장기 관리</h4><p>재발이 잦은 질환은 주기적 점검으로 악화를 예방하고 관리합니다.</p></div>
+        <div class="t-card fade"><div class="n">05</div><h4>생활 가이드</h4><p>피부 장벽 관리와 생활 습관 안내로 치료 효과를 오래 유지합니다.</p></div>
+        <div class="t-card fade"><div class="n">06</div><h4>전문 협진</h4><p>필요 시 적절한 추가 검사·협진을 안내해 드립니다.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta bleed">
+    <div class="wrap">
+      <h3>오래된 피부 고민, 정확한 진단부터 시작하세요.</h3>
+      <p>피부과 전문의가 원인을 살펴 치료 방향을 안내해 드립니다.</p>
+      <a class="btn" href="https://iroomskin.imweb.me/">상담 · 예약하기</a>
+    </div>
+  </section>
+</div>

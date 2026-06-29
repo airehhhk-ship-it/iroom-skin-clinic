@@ -1,0 +1,109 @@
+<!-- ===== IROOM 여드름 / 본문 단일 코드블록 ===== -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+.pg-acne{
+  --ink:#1c1a16;--ink-soft:#363129;--ivory:#f6f3ec;--cream:#ece7dc;--stone:#cfc7b8;
+  --taupe:#a99a82;--gold:#9a8460;--gold-deep:#7d6a4c;--line:rgba(28,26,22,.14);
+  --serif:"Noto Serif KR",serif;--latin:"Cormorant Garamond",serif;
+  --sans:"Noto Sans KR","Pretendard",system-ui,sans-serif;--maxw:1180px;
+}
+.pg-acne *{margin:0;padding:0;box-sizing:border-box}
+.pg-acne{font-family:var(--sans);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+.pg-acne a{color:inherit;text-decoration:none}
+.pg-acne .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.pg-acne .bleed{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);position:relative}
+.pg-acne .eyebrow{font-family:var(--latin);font-style:italic;font-weight:400;letter-spacing:.06em;color:var(--gold);font-size:clamp(20px,2.4vw,30px);display:block}
+.pg-acne .eyebrow-wrap{text-align:center;margin-bottom:clamp(34px,5vw,56px)}
+.pg-acne .eyebrow-wrap h2{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3.6vw,40px);margin-top:12px}
+.pg-acne .eyebrow-wrap p{margin-top:16px;color:var(--ink-soft);font-weight:300;font-size:15px;line-height:1.95}
+.pg-acne .fade{animation:pgFadeAcne .9s ease both}
+@keyframes pgFadeAcne{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.pg-acne .hero{min-height:50vh;display:flex;align-items:center;color:#f6f3ec;overflow:hidden}
+.pg-acne .hero .stone{position:absolute;inset:0;z-index:0;background-color:var(--ink);background-image:radial-gradient(90% 70% at 78% 12%,rgba(154,132,96,.18),transparent 60%),radial-gradient(70% 80% at 8% 90%,rgba(255,255,255,.06),transparent 55%),linear-gradient(165deg,#232019 0%,#15130f 100%)}
+.pg-acne .hero .wrap{position:relative;z-index:2}
+.pg-acne .hero .crumb{font-size:11px;letter-spacing:.26em;color:var(--gold);margin-bottom:22px}
+.pg-acne .hero h1{font-family:var(--latin);font-weight:300;font-size:clamp(44px,7vw,88px);line-height:1.04}
+.pg-acne .hero h1 em{font-style:italic}
+.pg-acne .hero .ko{margin-top:18px;font-family:var(--serif);font-weight:300;font-size:clamp(14px,1.7vw,18px);letter-spacing:.05em;color:rgba(246,243,236,.82);line-height:1.9}
+.pg-acne .intro{background:var(--ivory);padding:clamp(70px,10vw,120px) 0;text-align:center}
+.pg-acne .intro .lead{max-width:760px;margin:0 auto;font-family:var(--serif);font-weight:300;font-size:clamp(18px,2.4vw,26px);line-height:1.85}
+.pg-acne .intro .lead em{font-style:normal;color:var(--gold-deep)}
+.pg-acne .intro .sub{margin-top:20px;color:var(--ink-soft);font-weight:300;font-size:15px;line-height:1.95}
+.pg-acne .symp{background:var(--cream);padding:clamp(70px,10vw,120px) 0}
+.pg-acne .chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:840px;margin:0 auto}
+.pg-acne .chip{background:var(--ivory);border:1px solid var(--line);border-radius:40px;padding:12px 24px;font-size:14px;color:var(--ink-soft);transition:.3s}
+.pg-acne .chip:hover{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.pg-acne .treat{background:var(--ivory);padding:clamp(70px,10vw,120px) 0}
+.pg-acne .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pg-acne .t-card{background:#fff;border:1px solid var(--line);padding:34px 28px;transition:.4s}
+.pg-acne .t-card:hover{transform:translateY(-6px);box-shadow:0 22px 48px rgba(28,26,22,.1)}
+.pg-acne .t-card .n{font-family:var(--latin);font-style:italic;font-size:22px;color:var(--gold);margin-bottom:14px}
+.pg-acne .t-card h4{font-family:var(--serif);font-size:20px;font-weight:500;margin-bottom:12px}
+.pg-acne .t-card p{font-size:13.5px;color:var(--ink-soft);font-weight:300;line-height:1.85}
+.pg-acne .cta{background:var(--ink);color:#efe9dd;text-align:center;padding:clamp(64px,8vw,100px) 0}
+.pg-acne .cta h3{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,36px);line-height:1.5}
+.pg-acne .cta p{margin-top:16px;color:var(--stone);font-weight:300;font-size:15px}
+.pg-acne .cta .btn{display:inline-block;margin-top:30px;background:var(--gold);color:#fff;padding:15px 40px;border-radius:46px;font-size:14px;transition:.3s}
+.pg-acne .cta .btn:hover{background:var(--gold-deep);transform:translateY(-2px)}
+@media(max-width:1024px){.pg-acne .t-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.pg-acne .wrap{padding:0 22px}.pg-acne .t-grid{grid-template-columns:1fr}}
+</style>
+
+<div class="pg-acne">
+  <section class="hero bleed">
+    <div class="stone"></div>
+    <div class="wrap">
+      <p class="crumb">ACNE · IROOM DERMATOLOGY</p>
+      <h1>Clear <em>Skin.</em></h1>
+      <p class="ko">반복되는 여드름, 원인부터 흉터 예방까지 단계적으로 관리합니다.</p>
+    </div>
+  </section>
+
+  <section class="intro bleed">
+    <div class="wrap">
+      <p class="lead">짜기보다 <em>치료하세요.</em><br>흉터를 남기지 않는 것이 핵심입니다.</p>
+      <p class="sub">여드름은 피지·세균·각질·호르몬이 복합적으로 작용합니다.<br>이룸피부과는 단계와 피부 타입에 맞춰 약물과 시술을 병행해 재발과 흉터를 줄입니다.</p>
+    </div>
+  </section>
+
+  <section class="symp bleed">
+    <div class="wrap">
+      <div class="eyebrow-wrap fade">
+        <span class="eyebrow">Symptoms</span>
+        <h2>이런 여드름을 진료합니다</h2>
+        <p>유형과 심한 정도에 따라 치료를 다르게 적용합니다.</p>
+      </div>
+      <div class="chips fade">
+        <span class="chip">화농성 여드름</span><span class="chip">좁쌀 여드름</span><span class="chip">면포(블랙·화이트헤드)</span>
+        <span class="chip">낭종성 여드름</span><span class="chip">턱 · 입주변 여드름</span><span class="chip">등 · 가슴 여드름</span>
+        <span class="chip">여드름 자국</span><span class="chip">여드름 흉터</span><span class="chip">지성 · 모공</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="treat bleed">
+    <div class="wrap">
+      <div class="eyebrow-wrap fade">
+        <span class="eyebrow">Treatment</span>
+        <h2>치료 방법</h2>
+        <p>염증 진정부터 흉터 예방까지 단계적으로 관리합니다.</p>
+      </div>
+      <div class="t-grid">
+        <div class="t-card fade"><div class="n">01</div><h4>약물 치료</h4><p>피부 상태에 맞는 바르는·먹는 약으로 피지와 염증을 조절합니다.</p></div>
+        <div class="t-card fade"><div class="n">02</div><h4>전문 압출 · 스케일링</h4><p>면포와 농을 위생적으로 제거해 빠른 진정을 돕습니다.</p></div>
+        <div class="t-card fade"><div class="n">03</div><h4>아그네스</h4><p>피지선을 선택적으로 파괴해 재발이 잦은 여드름을 근본 관리합니다.</p></div>
+        <div class="t-card fade"><div class="n">04</div><h4>PDT(광역동 치료)</h4><p>광감작제와 빛으로 세균·피지선을 줄여 염증을 가라앉힙니다.</p></div>
+        <div class="t-card fade"><div class="n">05</div><h4>레이저 · 토닝</h4><p>붉은 자국과 색소를 정돈하고 피부결을 매끄럽게 개선합니다.</p></div>
+        <div class="t-card fade"><div class="n">06</div><h4>흉터 예방 · 관리</h4><p>염증 단계부터 흉터 발생을 줄이고, 남은 흉터를 재생 치료합니다.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta bleed">
+    <div class="wrap">
+      <h3>반복되는 여드름, 흉터 남기기 전에 치료하세요.</h3>
+      <p>피부과 전문의가 원인을 진단해 단계별 플랜을 안내합니다.</p>
+      <a class="btn" href="https://iroomskin.imweb.me/">상담 · 예약하기</a>
+    </div>
+  </section>
+</div>
