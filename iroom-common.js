@@ -24,8 +24,9 @@
   .ab-head{color:var(--ink);width:100%}
   .ab-head a,.ab-foot a{color:inherit;text-decoration:none}
 
-  /* NAV */
-  .ab-head .nav{width:100%;position:sticky;top:0;z-index:1000;color:var(--ink);background:rgba(246,243,236,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+  /* NAV — 기본은 투명(히어로 위에 뜸), 스크롤하면 .scrolled로 솔리드 */
+  .ab-head .nav{position:fixed;top:0;left:0;right:0;width:100%;z-index:1000;color:#f6f3ec;background:transparent;box-shadow:none;transition:background .4s,color .4s,box-shadow .4s}
+  .ab-head .nav.scrolled{color:var(--ink);background:rgba(246,243,236,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
   .ab-head .nav-inner{max-width:1280px;margin:0 auto;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px}
   .ab-head .brand{display:flex;align-items:baseline;gap:10px;font-family:var(--latin)}
   .ab-head .brand .lmark{font-size:24px;font-weight:500;letter-spacing:.04em}
@@ -228,6 +229,14 @@
       });
       var acc = head.querySelector('.mm-acc-head');
       if (acc) acc.addEventListener('click', function () { this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open'); });
+
+      // 스크롤 시 헤더 투명 → 솔리드 전환
+      var nav = head.querySelector('.nav');
+      if (nav) {
+        var onScroll = function () { nav.classList.toggle('scrolled', window.pageYOffset > 20); };
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+      }
     }
 
     // 아임웹 하단 제공자 배너 숨김 (클래스명이 매번 바뀌므로 텍스트로 탐지)
