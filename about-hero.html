@@ -1,0 +1,52 @@
+<!-- ===== IROOM ABOUT / 히어로 + 서브메뉴 (Imweb 코드블록) ===== -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Noto+Serif+KR:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap');
+.ab-hero{
+  --ink:#1c1a16;--ink-soft:#363129;--ivory:#f6f3ec;--cream:#ece7dc;
+  --taupe:#a99a82;--gold:#9a8460;--line:rgba(28,26,22,.14);
+  --serif:"Noto Serif KR",serif;--latin:"Cormorant Garamond",serif;
+  --sans:"Noto Sans KR","Pretendard",system-ui,sans-serif;--maxw:1180px;
+}
+.ab-hero *{margin:0;padding:0;box-sizing:border-box}
+.ab-hero{font-family:var(--sans);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+.ab-hero a{color:inherit;text-decoration:none}
+.ab-hero .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.ab-hero .about-hero,.ab-hero .subnav{width:100vw;position:relative;left:50%;transform:translateX(-50%)}
+.ab-hero .stone{background-color:var(--ink);background-image:radial-gradient(90% 70% at 78% 12%,rgba(154,132,96,.18),transparent 60%),radial-gradient(70% 80% at 8% 90%,rgba(255,255,255,.06),transparent 55%),linear-gradient(165deg,#232019 0%,#15130f 100%)}
+
+/* HERO */
+.ab-hero .about-hero{min-height:54vh;display:flex;align-items:center;color:#f6f3ec;overflow:hidden}
+.ab-hero .about-hero .stone{position:absolute;inset:0;z-index:0}
+.ab-hero .about-hero .wrap{position:relative;z-index:2}
+.ab-hero .about-hero .crumb{font-size:11px;letter-spacing:.26em;color:var(--gold);margin-bottom:22px}
+.ab-hero .about-hero h1{font-family:var(--latin);font-weight:300;font-size:clamp(46px,8vw,96px);line-height:1.02}
+.ab-hero .about-hero h1 em{font-style:italic}
+.ab-hero .about-hero .ko{margin-top:18px;font-family:var(--serif);font-weight:300;font-size:clamp(14px,1.7vw,18px);letter-spacing:.05em;color:rgba(246,243,236,.82);line-height:1.9}
+
+/* SUB NAV */
+.ab-hero .subnav{position:sticky;top:64px;z-index:50;background:rgba(246,243,236,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.ab-hero .subnav-inner{max-width:var(--maxw);margin:0 auto;display:flex;gap:6px;padding:0 28px;justify-content:center;flex-wrap:wrap}
+.ab-hero .subnav a{padding:18px 22px;font-size:13.5px;font-weight:500;letter-spacing:.02em;color:var(--ink-soft);transition:.3s}
+.ab-hero .subnav a:hover{color:var(--ink)}
+
+@media(max-width:768px){.ab-hero .wrap{padding:0 22px}.ab-hero .subnav{top:57px}}
+</style>
+
+<div class="ab-hero">
+<section class="about-hero">
+  <div class="stone"></div>
+  <div class="wrap">
+    <p class="crumb">ABOUT · IROOM DERMATOLOGY</p>
+    <h1>Be Calm, <em>Be Complete.</em></h1>
+    <p class="ko">이룸은 '이루다'에서 시작합니다.<br>당신이 바라던 변화를, 섬세함과 전문성으로 이룹니다.</p>
+  </div>
+</section>
+
+<nav class="subnav">
+  <div class="subnav-inner">
+    <a href="#brand-core">브랜드코어</a>
+    <a href="#doctors">의료진소개</a>
+    <a href="#location">진료시간 · 오시는길</a>
+  </div>
+</nav>
+</div>

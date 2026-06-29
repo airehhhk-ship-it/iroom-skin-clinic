@@ -1,0 +1,462 @@
+<!-- ===== IROOM ABOUT / Imweb embed ===== -->
+<style>
+
+:root{
+  --ink:#1c1a16;--ink-soft:#363129;--ivory:#f6f3ec;--cream:#ece7dc;--stone:#cfc7b8;
+  --taupe:#a99a82;--gold:#9a8460;--gold-deep:#7d6a4c;
+  --line:rgba(28,26,22,.14);--line-light:rgba(255,255,255,.18);
+  --serif:"Noto Serif KR",serif;--latin:"Cormorant Garamond",serif;
+  --sans:"Noto Sans KR","Pretendard",system-ui,sans-serif;--maxw:1180px;
+}
+.iroom-about *{margin:0;padding:0;box-sizing:border-box}
+.iroom-about{scroll-behavior:smooth}
+.iroom-about{font-family:var(--sans);color:var(--ink);background:var(--ivory);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.iroom-about img{display:block;max-width:100%}
+.iroom-about a{color:inherit;text-decoration:none}
+.iroom-about .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+/* full-bleed breakout for Imweb boxed sections; inner content stays centered via .wrap */
+.iroom-about .about-hero,.iroom-about .subnav,.iroom-about .footer,.iroom-about section.block{width:100vw;position:relative;left:50%;transform:translateX(-50%)}
+.iroom-about .marble,.iroom-about.marble{background-color:var(--ivory);background-image:radial-gradient(120% 90% at 12% 18%,rgba(255,255,255,.7),transparent 55%),radial-gradient(80% 60% at 88% 8%,rgba(208,199,184,.45),transparent 60%),linear-gradient(160deg,#f7f4ee 0%,#ece6da 100%)}
+.iroom-about .stone{background-color:var(--ink);background-image:radial-gradient(90% 70% at 78% 12%,rgba(154,132,96,.18),transparent 60%),radial-gradient(70% 80% at 8% 90%,rgba(255,255,255,.06),transparent 55%),linear-gradient(165deg,#232019 0%,#15130f 100%)}
+.iroom-about .eyebrow{font-family:var(--latin);font-style:italic;font-weight:400;letter-spacing:.06em;color:var(--gold);font-size:clamp(20px,2.4vw,30px);display:block}
+
+/* NAV (shared) */
+.iroom-about header.nav{position:fixed;inset:0 0 auto 0;z-index:100;transition:background .4s,box-shadow .4s,color .4s;color:var(--ink);background:rgba(246,243,236,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+.iroom-about .nav-inner{max-width:1280px;margin:0 auto;padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.iroom-about .brand{display:flex;align-items:baseline;gap:10px;font-family:var(--latin)}
+.iroom-about .brand .mark{font-size:24px;font-weight:500;letter-spacing:.04em}
+.iroom-about .brand .ko{font-family:var(--serif);font-size:14px;font-weight:500;letter-spacing:.08em;opacity:.85}
+.iroom-about .nav-menu{display:flex;align-items:center;gap:30px}
+.iroom-about .nav-menu>li{position:relative;font-size:14px;letter-spacing:.02em;font-weight:500}
+.iroom-about .nav-menu>li>a{padding:14px 0;display:inline-block;position:relative}
+.iroom-about .nav-menu>li>a::after{content:"";position:absolute;left:0;bottom:8px;height:1px;width:0;background:currentColor;transition:width .35s}
+.iroom-about .nav-menu>li:hover>a::after,.iroom-about .nav-menu>li.active>a::after{width:100%}
+.iroom-about .submenu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);background:var(--ivory);min-width:188px;padding:10px 0;border:1px solid var(--line);box-shadow:0 18px 40px rgba(20,18,14,.14);opacity:0;visibility:hidden;transition:.28s;color:var(--ink)}
+.iroom-about .has-sub:hover .submenu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.iroom-about .submenu li a{display:block;padding:9px 22px;font-size:13.5px;transition:background .2s,color .2s}
+.iroom-about .submenu li a:hover{background:var(--cream);color:var(--gold-deep)}
+.iroom-about .submenu .div{height:1px;background:var(--line);margin:8px 18px}
+.iroom-about .nav-right{display:flex;align-items:center;gap:18px}
+.iroom-about .lang{display:flex;gap:9px;font-size:11px;letter-spacing:.12em;font-weight:500}
+.iroom-about .lang a{opacity:.5;transition:.2s}.iroom-about .lang a.on,.iroom-about .lang a:hover{opacity:1}
+.iroom-about .nav-cta{font-size:13px;font-weight:500;letter-spacing:.04em;border:1px solid currentColor;padding:9px 18px;border-radius:40px;transition:.3s}
+.iroom-about .nav-cta:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.iroom-about .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:0}
+.iroom-about .burger span{width:24px;height:1.5px;background:currentColor;transition:.3s}
+
+/* PAGE HERO */
+.iroom-about .about-hero{min-height:60vh;display:flex;align-items:center;color:#f6f3ec;position:relative;overflow:hidden}
+.iroom-about .about-hero .stone{position:absolute;inset:0;z-index:0}
+.iroom-about .about-hero .wrap{position:relative;z-index:2}
+.iroom-about .about-hero .crumb{font-size:11px;letter-spacing:.26em;color:var(--gold);margin-bottom:22px}
+.iroom-about .about-hero h1{font-family:var(--latin);font-weight:300;font-size:clamp(46px,8vw,96px);line-height:1.02}
+.iroom-about .about-hero h1 em{font-style:italic}
+.iroom-about .about-hero .ko{margin-top:18px;font-family:var(--serif);font-weight:300;font-size:clamp(14px,1.7vw,18px);letter-spacing:.05em;color:rgba(246,243,236,.82);line-height:1.9}
+
+/* SUB NAV (anchors) */
+.iroom-about .subnav{position:sticky;top:69px;z-index:50;background:rgba(246,243,236,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.iroom-about .subnav-inner{max-width:var(--maxw);margin:0 auto;display:flex;gap:6px;padding:0 28px;justify-content:center;flex-wrap:wrap}
+.iroom-about .subnav a{padding:18px 22px;font-size:13.5px;font-weight:500;letter-spacing:.02em;color:var(--ink-soft);position:relative;transition:color .3s}
+.iroom-about .subnav a::after{content:"";position:absolute;left:22px;right:22px;bottom:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .3s}
+.iroom-about .subnav a:hover,.iroom-about .subnav a.cur{color:var(--ink)}
+.iroom-about .subnav a.cur::after{transform:scaleX(1)}
+
+/* anchor offset */
+.iroom-about .anchor{scroll-margin-top:130px}
+
+.iroom-about section.block{padding:clamp(80px,11vw,140px) 0;position:relative}
+.iroom-about .eyebrow-wrap{text-align:center;margin-bottom:clamp(34px,5vw,56px)}
+.iroom-about .eyebrow-wrap h2{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3.6vw,40px);margin-top:12px}
+.iroom-about .eyebrow-wrap p{margin-top:16px;color:var(--ink-soft);font-weight:300;font-size:15px;line-height:1.95}
+.iroom-about .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
+.iroom-about .reveal.in{opacity:1;transform:none}
+
+/* BRAND CORE */
+.iroom-about .bc{background:var(--ivory)}
+.iroom-about .bc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,64px);align-items:center}
+.iroom-about .bc-visual{min-height:clamp(360px,40vw,500px);border-radius:2px;position:relative;overflow:hidden;background:linear-gradient(140deg,#a99a82,#4f463600);background-color:#5a4f3c;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4)}
+.iroom-about .bc-visual::after{content:"";position:absolute;inset:0;background:radial-gradient(90% 100% at 70% 50%,transparent,rgba(20,18,14,.4))}
+.iroom-about .bc-visual .note{position:relative;z-index:1;font-family:var(--latin);font-style:italic;font-size:16px;letter-spacing:.08em}
+.iroom-about .bc-text .small{font-family:var(--latin);font-style:italic;font-size:20px;color:var(--gold);margin-bottom:14px}
+.iroom-about .bc-text h3{font-family:var(--serif);font-size:clamp(22px,3vw,32px);font-weight:500;line-height:1.5;margin-bottom:22px}
+.iroom-about .bc-text h3 em{font-style:normal;color:var(--gold-deep)}
+.iroom-about .bc-text p{color:var(--ink-soft);font-weight:300;font-size:15px;line-height:2;margin-bottom:16px}
+.iroom-about .values{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:clamp(50px,7vw,80px)}
+.iroom-about .value{border:1px solid var(--line);padding:34px 26px;background:var(--ivory);transition:.4s}
+.iroom-about .value:hover{background:var(--cream);transform:translateY(-5px)}
+.iroom-about .value .n{font-family:var(--latin);font-style:italic;font-size:24px;color:var(--gold);margin-bottom:14px}
+.iroom-about .value h4{font-family:var(--serif);font-size:19px;font-weight:500;margin-bottom:12px}
+.iroom-about .value p{font-size:13.5px;color:var(--ink-soft);font-weight:300;line-height:1.85}
+
+/* DOCTORS */
+.iroom-about .doc{background:var(--cream)}
+.iroom-about .doc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.iroom-about .doc-card{background:var(--ivory);border:1px solid var(--line);overflow:hidden;transition:.4s}
+.iroom-about .doc-card:hover{transform:translateY(-6px);box-shadow:0 22px 48px rgba(28,26,22,.12)}
+.iroom-about .doc-photo{height:300px;background:linear-gradient(160deg,#3a342b,#15120d);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.35);font-family:var(--latin);font-style:italic}
+.iroom-about .dp2{background:linear-gradient(160deg,#6b6052,#332c22)}
+.iroom-about .dp3{background:linear-gradient(160deg,#4f463a,#221d16)}
+.iroom-about .doc-body{padding:26px}
+.iroom-about .doc-body .role{font-size:11px;letter-spacing:.2em;color:var(--gold);margin-bottom:10px}
+.iroom-about .doc-body h4{font-family:var(--serif);font-size:22px;font-weight:500;margin-bottom:4px}
+.iroom-about .doc-body h4 span{font-family:var(--latin);font-size:16px;color:var(--taupe);margin-left:8px}
+.iroom-about .doc-body ul{list-style:none;margin-top:16px;border-top:1px solid var(--line);padding-top:16px}
+.iroom-about .doc-body ul li{font-size:13px;color:var(--ink-soft);font-weight:300;padding:4px 0;padding-left:14px;position:relative}
+.iroom-about .doc-body ul li::before{content:"—";position:absolute;left:0;color:var(--gold)}
+
+/* LOCATION */
+.iroom-about .loc{background:var(--ivory)}
+.iroom-about .loc-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(30px,4vw,50px)}
+.iroom-about .map-ph{min-height:clamp(320px,40vw,460px);background:linear-gradient(150deg,#dcd6c8,#b3a98f);border:1px solid var(--line);position:relative;display:flex;align-items:center;justify-content:center;color:var(--ink-soft);font-family:var(--serif);overflow:hidden}
+.iroom-about .map-ph::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.25) 0 1px,transparent 1px 38px),repeating-linear-gradient(90deg,rgba(255,255,255,.25) 0 1px,transparent 1px 38px)}
+.iroom-about .map-ph span{position:relative;z-index:1;background:rgba(246,243,236,.85);padding:10px 20px;border-radius:40px;font-size:13px}
+.iroom-about .loc-info h3{font-family:var(--serif);font-size:24px;font-weight:500;margin-bottom:8px}
+.iroom-about .loc-info .addr{font-size:15px;color:var(--ink-soft);font-weight:300;line-height:1.8;margin-bottom:6px}
+.iroom-about .loc-info .sub{font-size:13px;color:var(--taupe);margin-bottom:24px}
+.iroom-about .loc-info .way-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+.iroom-about .loc-info .way-btns a{font-size:12px;border:1px solid var(--line);padding:10px 16px;border-radius:40px;transition:.3s;display:inline-flex;gap:6px;align-items:center}
+.iroom-about .loc-info .way-btns a:hover{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.iroom-about .hours-block{border-top:1px solid var(--line);padding-top:24px}
+.iroom-about .hours-block h6{font-size:11px;letter-spacing:.22em;color:var(--gold);margin-bottom:16px}
+.iroom-about .hours-tb{width:100%;font-size:14px}
+.iroom-about .hours-tb tr{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line)}
+.iroom-about .hours-tb .d{color:var(--ink-soft);font-weight:300}.iroom-about .hours-tb .t{font-weight:500}
+.iroom-about .phone-line{margin-top:26px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.iroom-about .phone-line .lbl{font-size:11px;letter-spacing:.2em;color:var(--taupe)}
+.iroom-about .phone-line .num{font-family:var(--latin);font-size:34px;letter-spacing:.02em}
+.iroom-about .loc-cta{margin-top:18px}
+.iroom-about .loc-cta a{display:inline-block;background:var(--ink);color:var(--ivory);padding:15px 38px;border-radius:46px;font-size:14px;letter-spacing:.03em;transition:.3s}
+.iroom-about .loc-cta a:hover{background:var(--gold);transform:translateY(-2px)}
+
+/* FOOTER (shared) */
+.iroom-about .footer{color:#e8e3d8;position:relative;overflow:hidden}
+.iroom-about .footer .stone{position:absolute;inset:0;z-index:0}
+.iroom-about .footer-inner{position:relative;z-index:2;padding:clamp(70px,9vw,110px) 0 40px}
+.iroom-about .foot-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:46px}
+.iroom-about .foot-brand .mark{font-family:var(--latin);font-size:30px;letter-spacing:.04em;margin-bottom:6px}
+.iroom-about .foot-brand .ko{font-family:var(--serif);font-size:14px;letter-spacing:.1em;color:var(--stone)}
+.iroom-about .foot-brand .links{display:flex;gap:14px;margin-top:22px;flex-wrap:wrap}
+.iroom-about .foot-brand .links a{font-size:12px;border:1px solid var(--line-light);padding:9px 14px;border-radius:34px;transition:.3s}
+.iroom-about .foot-brand .links a:hover{background:rgba(246,243,236,.1)}
+.iroom-about .foot-col h6{font-size:11px;letter-spacing:.24em;color:var(--gold);margin-bottom:18px;font-weight:500}
+.iroom-about .foot-col .phone{font-family:var(--latin);font-size:clamp(26px,3.4vw,38px);letter-spacing:.02em;margin-bottom:6px}
+.iroom-about .foot-col p{font-size:13px;color:var(--stone);font-weight:300;line-height:1.9}
+.iroom-about .foot-hours{margin-top:4px;font-size:13px;width:100%}
+.iroom-about .foot-hours tr{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--line-light)}
+.iroom-about .foot-hours .d{color:var(--stone)}.iroom-about .foot-hours .t{color:#f0ebe0}
+.iroom-about .foot-note{margin-top:14px;font-size:12px;color:var(--taupe)}
+.iroom-about .foot-cta{margin-top:18px}
+.iroom-about .foot-cta a{display:inline-block;background:var(--gold);color:#fff;padding:13px 30px;border-radius:46px;font-size:13px;letter-spacing:.04em;transition:.3s}
+.iroom-about .foot-cta a:hover{background:var(--gold-deep)}
+.iroom-about .foot-bottom{position:relative;z-index:2;border-top:1px solid var(--line-light);margin-top:54px;padding:22px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:11px;color:var(--taupe);letter-spacing:.04em}
+.iroom-about .foot-bottom .legal a{margin-right:16px;color:var(--stone)}
+
+/* DOCK + MOBILE (shared) */
+.iroom-about .dock{position:fixed;right:18px;bottom:26px;z-index:90;display:flex;flex-direction:column;gap:9px}
+.iroom-about .dock a{width:54px;height:54px;border-radius:50%;background:var(--ink);color:var(--ivory);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:9px;box-shadow:0 8px 22px rgba(20,18,14,.28);transition:.3s}
+.iroom-about .dock a:hover{background:var(--gold);transform:translateY(-3px)}
+.iroom-about .dock a.kakao{background:#fae100;color:#3b1e1e}.iroom-about .dock a.kakao:hover{background:#ffe92e}
+.iroom-about .dock a .ico{font-size:17px;line-height:1}
+.iroom-about .dock .top{background:var(--ivory);color:var(--ink);border:1px solid var(--line)}.iroom-about .dock .top:hover{background:var(--gold);color:#fff}
+.iroom-about .mbar{display:none}
+.iroom-about .mobile-menu{position:fixed;inset:0;z-index:120;background:var(--ivory);transform:translateX(100%);transition:transform .45s cubic-bezier(.7,0,.2,1);overflow-y:auto}
+.iroom-about .mobile-menu.open{transform:none}
+.iroom-about .mm-top{display:flex;justify-content:space-between;align-items:center;padding:22px 26px;border-bottom:1px solid var(--line)}
+.iroom-about .mm-close{background:none;border:0;font-size:26px;cursor:pointer}
+.iroom-about .mm-list{padding:14px 26px 40px}
+.iroom-about .mm-list>li{border-bottom:1px solid var(--line)}
+.iroom-about .mm-list>li>a,.iroom-about .mm-acc-head{display:flex;justify-content:space-between;align-items:center;padding:18px 2px;font-family:var(--serif);font-size:18px;font-weight:500;cursor:pointer;width:100%;background:none;border:0;text-align:left;color:inherit}
+.iroom-about .mm-acc-body{max-height:0;overflow:hidden;transition:max-height .35s}
+.iroom-about .mm-acc-body.open{max-height:420px}
+.iroom-about .mm-acc-body a{display:block;padding:11px 8px;font-size:14px;color:var(--ink-soft)}
+.iroom-about .mm-acc-head .chev{transition:transform .3s;font-size:14px;color:var(--taupe)}
+.iroom-about .mm-acc-head.open .chev{transform:rotate(180deg)}
+.iroom-about .mm-foot{padding:24px 26px;background:var(--cream)}
+.iroom-about .mm-foot a{display:block;text-align:center;background:var(--ink);color:var(--ivory);padding:15px;border-radius:46px;font-size:14px}
+
+@media(max-width:1024px){.iroom-about .bc-grid,.iroom-about .loc-grid{grid-template-columns:1fr}.iroom-about .values,.iroom-about .doc-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){
+  .iroom-about .nav-menu,.iroom-about .nav-cta,.iroom-about .lang{display:none}.iroom-about .burger{display:flex}.iroom-about .nav-inner{padding:18px 22px}.iroom-about .wrap{padding:0 22px}
+  .iroom-about header.nav{color:var(--ink)}
+  .iroom-about .subnav{top:61px}.iroom-about .anchor{scroll-margin-top:118px}
+  .iroom-about .values,.iroom-about .doc-grid{grid-template-columns:1fr}
+  .iroom-about .foot-grid{grid-template-columns:1fr;gap:36px}
+  .iroom-about .dock{right:14px;bottom:84px}.iroom-about .dock a{width:48px;height:48px}
+  .iroom-about .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:95;background:var(--ivory);border-top:1px solid var(--line);padding:10px 14px;gap:10px}
+  .iroom-about .mbar a{flex:1;text-align:center;padding:13px;border-radius:46px;font-size:13px;font-weight:500}
+  .iroom-about .mbar .call{border:1px solid var(--ink)}.iroom-about .mbar .book{background:var(--ink);color:var(--ivory)}
+  .iroom-about .footer-inner{padding-bottom:96px}
+}
+@media(prefers-reduced-motion:reduce){.iroom-about *{animation:none!important;scroll-behavior:auto}.iroom-about .reveal{opacity:1;transform:none}}
+
+</style>
+
+<div class="iroom-about marble">
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="mark">iroom</span><span class="ko">이룸피부과</span></a>
+    <nav>
+      <ul class="nav-menu">
+        <li class="has-sub active">
+          <a href="about.html">ABOUT</a>
+          <ul class="submenu">
+            <li><a href="about.html#brand-core">브랜드코어</a></li>
+            <li><a href="about.html#doctors">의료진소개</a></li>
+            <li><a href="about.html#location">진료시간 / 오시는길</a></li>
+            <li class="div"></li>
+            <li><a href="equipment.html">시술장비</a></li>
+            <li><a href="notice.html">공지 / 이벤트</a></li>
+            <li><a href="https://youtube.com" target="_blank" rel="noopener">유튜브</a></li>
+          </ul>
+        </li>
+        <li><a href="special.html">특수질환</a></li>
+        <li><a href="antiaging.html">항노화</a></li>
+        <li><a href="scar.html">흉터</a></li>
+        <li><a href="acne.html">여드름</a></li>
+        <li><a href="pigment.html">색소</a></li>
+        <li><a href="vascular.html">홍조혈관</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="lang"><a href="#" class="on">KR</a><a href="#">EN</a></div>
+      <a href="index.html#consult" class="nav-cta">상담예약</a>
+      <button class="burger" id="burger" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="about-hero">
+  <div class="stone"></div>
+  <div class="wrap">
+    <p class="crumb">ABOUT · IROOM DERMATOLOGY</p>
+    <h1>Be Calm, <em>Be Complete.</em></h1>
+    <p class="ko">이룸은 '이루다'에서 시작합니다.<br>당신이 바라던 변화를, 섬세함과 전문성으로 이룹니다.</p>
+  </div>
+</section>
+
+<!-- SUB NAV -->
+<nav class="subnav" id="subnav">
+  <div class="subnav-inner">
+    <a href="#brand-core" class="cur">브랜드코어</a>
+    <a href="#doctors">의료진소개</a>
+    <a href="#location">진료시간 · 오시는길</a>
+  </div>
+</nav>
+
+<!-- ===== BRAND CORE ===== -->
+<section class="block bc anchor" id="brand-core">
+  <div class="wrap">
+    <div class="eyebrow-wrap reveal">
+      <span class="eyebrow">Brand Core</span>
+      <h2>이룸이 일하는 방식</h2>
+      <p>겉으로 드러나는 변화보다, 그 변화가 지속되는 이유를 먼저 봅니다.</p>
+    </div>
+    <div class="bc-grid">
+      <div class="bc-visual reveal"><span class="note">— 브랜드 무드 이미지 영역 —</span></div>
+      <div class="bc-text reveal">
+        <p class="small">Concentrate. Detail. Private.</p>
+        <h3>작은 차이도 놓치지 않는 <em>섬세함의 차이</em>를 경험하세요.</h3>
+        <p>예민한 피부일수록 섬세한 눈과 손길이 필요합니다. 이룸피부과는 피부과 전문의가 진료의 처음부터 끝까지 함께하며, 환자 한 사람 한 사람의 피부와 시간을 들여 마주합니다.</p>
+        <p>유행을 좇기보다 피부 본연의 건강을 회복시키는 일 — 그 정직한 과정이 이룸이 지켜온 기준입니다.</p>
+      </div>
+    </div>
+    <div class="values">
+      <div class="value reveal"><div class="n">01</div><h4>Concentrate</h4><p>한 분의 진료에 충분한 시간을 들입니다. 빠른 회전이 아닌 깊은 집중으로.</p></div>
+      <div class="value reveal"><div class="n">02</div><h4>Detail</h4><p>피부 상태의 미세한 변화까지 읽고, 그에 맞춰 치료를 설계합니다.</p></div>
+      <div class="value reveal"><div class="n">03</div><h4>Private</h4><p>프라이빗한 동선과 공간에서, 편안하고 안정적인 케어를 경험합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DOCTORS ===== -->
+<section class="block doc anchor" id="doctors">
+  <div class="wrap">
+    <div class="eyebrow-wrap reveal">
+      <span class="eyebrow">Delicate Doctor</span>
+      <h2>의료진 소개</h2>
+      <p>피부과 전문의가 진료의 모든 과정에 직접 함께합니다.</p>
+    </div>
+    <div class="doc-grid">
+      <div class="doc-card reveal">
+        <div class="doc-photo">— 의료진 사진 —</div>
+        <div class="doc-body">
+          <p class="role">대표원장 · 피부과 전문의</p>
+          <h4>○○○ <span>M.D.</span></h4>
+          <ul>
+            <li>대한피부과학회 정회원</li>
+            <li>대한피부과학회 정회원 / 전문의</li>
+            <li>전) ○○대학교병원 피부과</li>
+          </ul>
+        </div>
+      </div>
+      <div class="doc-card reveal">
+        <div class="doc-photo dp2">— 의료진 사진 —</div>
+        <div class="doc-body">
+          <p class="role">원장 · 피부과 전문의</p>
+          <h4>○○○ <span>M.D.</span></h4>
+          <ul>
+            <li>대한피부과학회 정회원</li>
+            <li>대한레이저피부모발학회 회원</li>
+            <li>전) ○○병원 피부과</li>
+          </ul>
+        </div>
+      </div>
+      <div class="doc-card reveal">
+        <div class="doc-photo dp3">— 의료진 사진 —</div>
+        <div class="doc-body">
+          <p class="role">원장 · 피부과 전문의</p>
+          <h4>○○○ <span>M.D.</span></h4>
+          <ul>
+            <li>대한피부과학회 정회원</li>
+            <li>대한미용피부외과학회 회원</li>
+            <li>전) ○○의료원 피부과</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LOCATION ===== -->
+<section class="block loc anchor" id="location">
+  <div class="wrap">
+    <div class="eyebrow-wrap reveal">
+      <span class="eyebrow">Visit Us</span>
+      <h2>진료시간 · 오시는 길</h2>
+      <p>편하신 시간에 방문하실 수 있도록 안내해 드립니다.</p>
+    </div>
+    <div class="loc-grid">
+      <div class="map-ph reveal"><span>📍 지도 영역 — 아임웹 지도 위젯 / 네이버 지도 임베드</span></div>
+      <div class="loc-info reveal">
+        <h3>이룸피부과</h3>
+        <p class="addr">서울특별시 ○○구 ○○로 000, 0층</p>
+        <p class="sub">○○역 0번 출구에서 도보 0분</p>
+        <div class="way-btns">
+          <a href="#">📍 네이버 길찾기</a>
+          <a href="#">💬 카카오 길찾기</a>
+          <a href="#">🚗 티맵 길찾기</a>
+        </div>
+        <div class="hours-block">
+          <h6>CONSULTING HOURS</h6>
+          <table class="hours-tb">
+            <tr><span class="d">월 – 금</span><span class="t">오전 10:00 – 오후 19:00</span></tr>
+            <tr><span class="d">토요일</span><span class="t">오전 10:00 – 오후 15:00</span></tr>
+            <tr><span class="d">점심시간</span><span class="t">오후 13:00 – 14:00</span></tr>
+            <tr><span class="d">일요일 · 공휴일</span><span class="t">휴진</span></tr>
+          </table>
+        </div>
+        <div class="phone-line">
+          <span class="lbl">RESERVATION</span>
+          <a class="num" href="tel:0200000000">02-000-0000</a>
+        </div>
+        <div class="loc-cta"><a href="index.html#consult">온라인 상담 예약하기</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="consult">
+  <div class="stone"></div>
+  <div class="footer-inner wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="mark">iroom</div>
+        <div class="ko">이룸피부과 · IROOM DERMATOLOGY</div>
+        <p class="foot-note" style="margin-top:14px;color:var(--stone)">오시는 길<br>서울특별시 ○○구 ○○로 000, 0층 (○○역 0번 출구 도보 0분)</p>
+        <div class="links">
+          <a href="#">📍 네이버 길찾기</a><a href="#">💬 카카오 길찾기</a><a href="#">🚗 티맵 길찾기</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h6>RESERVATION</h6>
+        <div class="phone">02-000-0000</div>
+        <p>전화 · 카카오톡 · 온라인 상담 모두 가능합니다.<br>편하신 방법으로 문의해 주세요.</p>
+        <div class="foot-cta"><a href="index.html#consult">온라인 상담 예약하기</a></div>
+      </div>
+      <div class="foot-col">
+        <h6>HOURS</h6>
+        <table class="foot-hours">
+          <tr><span class="d">월 – 금</span><span class="t">10:00 – 19:00</span></tr>
+          <tr><span class="d">토요일</span><span class="t">10:00 – 15:00</span></tr>
+          <tr><span class="d">점심시간</span><span class="t">13:00 – 14:00</span></tr>
+          <tr><span class="d">일 · 공휴일</span><span class="t">휴진</span></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom wrap">
+    <div class="legal"><a href="#">이용약관</a><a href="#">개인정보처리방침</a><a href="#">비급여진료안내</a></div>
+    <div>COPYRIGHT © 2025 IROOM DERMATOLOGY. ALL RIGHTS RESERVED.</div>
+  </div>
+</footer>
+
+<!-- DOCK -->
+<aside class="dock">
+  <a href="tel:0200000000" aria-label="전화상담"><span class="ico">☎</span>전화</a>
+  <a href="#" class="kakao" aria-label="카카오톡 상담"><span class="ico">💬</span>카톡</a>
+  <a href="index.html#consult" aria-label="온라인 상담"><span class="ico">✎</span>상담</a>
+  <a href="#" class="top" aria-label="맨 위로" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><span class="ico">↑</span></a>
+</aside>
+
+<div class="mbar">
+  <a href="tel:0200000000" class="call">☎ 전화상담</a>
+  <a href="index.html#consult" class="book">상담 예약하기</a>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mm-top">
+    <div class="brand"><span class="mark" style="font-family:var(--latin);font-size:24px">iroom</span></div>
+    <button class="mm-close" id="mmClose" aria-label="닫기">×</button>
+  </div>
+  <ul class="mm-list">
+    <li>
+      <button class="mm-acc-head"><span>ABOUT</span><span class="chev">▾</span></button>
+      <div class="mm-acc-body">
+        <a href="#brand-core">브랜드코어</a>
+        <a href="#doctors">의료진소개</a>
+        <a href="#location">진료시간 / 오시는길</a>
+        <a href="equipment.html">시술장비</a>
+        <a href="notice.html">공지 / 이벤트</a>
+        <a href="https://youtube.com" target="_blank" rel="noopener">유튜브</a>
+      </div>
+    </li>
+    <li><a href="special.html">특수질환</a></li>
+    <li><a href="antiaging.html">항노화</a></li>
+    <li><a href="scar.html">흉터</a></li>
+    <li><a href="acne.html">여드름</a></li>
+    <li><a href="pigment.html">색소</a></li>
+    <li><a href="vascular.html">홍조혈관</a></li>
+  </ul>
+  <div class="mm-foot"><a href="index.html#consult">상담 · 예약하기</a></div>
+</div>
+
+<script>
+(function(){
+const root=document.currentScript.closest('.iroom-about');
+const mm=root.querySelector('#mobileMenu');
+const burger=root.querySelector('#burger');
+const closeBtn=root.querySelector('#mmClose');
+if(burger) burger.onclick=()=>{mm.classList.add('open');document.body.style.overflow='hidden';};
+if(closeBtn) closeBtn.onclick=()=>{mm.classList.remove('open');document.body.style.overflow='';};
+root.querySelectorAll('.mm-list a').forEach(a=>a.addEventListener('click',()=>{mm.classList.remove('open');document.body.style.overflow='';}));
+const acc=root.querySelector('.mm-acc-head');
+if(acc) acc.addEventListener('click',function(){this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');});
+
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+root.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const links=[...root.querySelectorAll('.subnav a')];
+const secs=['brand-core','doctors','location'].map(id=>root.querySelector('#'+id)).filter(Boolean);
+const spy=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){
+    links.forEach(l=>l.classList.toggle('cur',l.getAttribute('href')==='#'+e.target.id));
+  }});
+},{rootMargin:'-45% 0px -50% 0px'});
+secs.forEach(s=>spy.observe(s));
+})();
+</script>
+</div>

@@ -1,0 +1,86 @@
+<!-- ===== IROOM ABOUT / 진료시간·오시는길 (Imweb 코드블록) ===== -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+.ab-location{
+  --ink:#1c1a16;--ink-soft:#363129;--ivory:#f6f3ec;--cream:#ece7dc;--stone:#cfc7b8;
+  --taupe:#a99a82;--gold:#9a8460;--gold-deep:#7d6a4c;--line:rgba(28,26,22,.14);
+  --serif:"Noto Serif KR",serif;--latin:"Cormorant Garamond",serif;
+  --sans:"Noto Sans KR","Pretendard",system-ui,sans-serif;--maxw:1180px;
+}
+.ab-location *{margin:0;padding:0;box-sizing:border-box}
+.ab-location{font-family:var(--sans);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+.ab-location a{color:inherit;text-decoration:none}
+.ab-location .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.ab-location .block{width:100vw;position:relative;left:50%;transform:translateX(-50%);padding:clamp(70px,10vw,130px) 0;background:var(--ivory)}
+.ab-location .anchor{scroll-margin-top:120px}
+.ab-location .eyebrow{font-family:var(--latin);font-style:italic;font-weight:400;letter-spacing:.06em;color:var(--gold);font-size:clamp(20px,2.4vw,30px);display:block}
+.ab-location .eyebrow-wrap{text-align:center;margin-bottom:clamp(34px,5vw,56px)}
+.ab-location .eyebrow-wrap h2{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3.6vw,40px);margin-top:12px}
+.ab-location .eyebrow-wrap p{margin-top:16px;color:var(--ink-soft);font-weight:300;font-size:15px;line-height:1.95}
+.ab-location .fade{animation:abLocFade .9s ease both}
+@keyframes abLocFade{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+.ab-location .loc-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(30px,4vw,50px)}
+.ab-location .map-ph{min-height:clamp(320px,40vw,460px);background:linear-gradient(150deg,#dcd6c8,#b3a98f);border:1px solid var(--line);position:relative;display:flex;align-items:center;justify-content:center;color:var(--ink-soft);font-family:var(--serif);overflow:hidden}
+.ab-location .map-ph::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.25) 0 1px,transparent 1px 38px),repeating-linear-gradient(90deg,rgba(255,255,255,.25) 0 1px,transparent 1px 38px)}
+.ab-location .map-ph span{position:relative;z-index:1;background:rgba(246,243,236,.85);padding:10px 20px;border-radius:40px;font-size:13px}
+.ab-location .loc-info h3{font-family:var(--serif);font-size:24px;font-weight:500;margin-bottom:8px}
+.ab-location .loc-info .addr{font-size:15px;color:var(--ink-soft);font-weight:300;line-height:1.8;margin-bottom:6px}
+.ab-location .loc-info .sub{font-size:13px;color:var(--taupe);margin-bottom:24px}
+.ab-location .loc-info .way-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+.ab-location .loc-info .way-btns a{font-size:12px;border:1px solid var(--line);padding:10px 16px;border-radius:40px;transition:.3s;display:inline-flex;gap:6px;align-items:center}
+.ab-location .loc-info .way-btns a:hover{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.ab-location .hours-block{border-top:1px solid var(--line);padding-top:24px}
+.ab-location .hours-block h6{font-size:11px;letter-spacing:.22em;color:var(--gold);margin-bottom:16px}
+.ab-location .hours-tb{width:100%;font-size:14px}
+.ab-location .hours-tb tr{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line)}
+.ab-location .hours-tb .d{color:var(--ink-soft);font-weight:300}.ab-location .hours-tb .t{font-weight:500}
+.ab-location .phone-line{margin-top:26px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.ab-location .phone-line .lbl{font-size:11px;letter-spacing:.2em;color:var(--taupe)}
+.ab-location .phone-line .num{font-family:var(--latin);font-size:34px;letter-spacing:.02em}
+.ab-location .loc-cta{margin-top:18px}
+.ab-location .loc-cta a{display:inline-block;background:var(--ink);color:var(--ivory);padding:15px 38px;border-radius:46px;font-size:14px;letter-spacing:.03em;transition:.3s}
+.ab-location .loc-cta a:hover{background:var(--gold);transform:translateY(-2px)}
+
+@media(max-width:1024px){.ab-location .loc-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.ab-location .wrap{padding:0 22px}}
+</style>
+
+<div class="ab-location">
+<section class="block anchor" id="location">
+  <div class="wrap">
+    <div class="eyebrow-wrap fade">
+      <span class="eyebrow">Visit Us</span>
+      <h2>진료시간 · 오시는 길</h2>
+      <p>편하신 시간에 방문하실 수 있도록 안내해 드립니다.</p>
+    </div>
+    <div class="loc-grid">
+      <div class="map-ph fade"><span>📍 지도 영역 — 아임웹 지도 위젯 / 네이버 지도 임베드</span></div>
+      <div class="loc-info fade">
+        <h3>이룸피부과</h3>
+        <p class="addr">서울특별시 ○○구 ○○로 000, 0층</p>
+        <p class="sub">○○역 0번 출구에서 도보 0분</p>
+        <div class="way-btns">
+          <a href="#">📍 네이버 길찾기</a>
+          <a href="#">💬 카카오 길찾기</a>
+          <a href="#">🚗 티맵 길찾기</a>
+        </div>
+        <div class="hours-block">
+          <h6>CONSULTING HOURS</h6>
+          <table class="hours-tb">
+            <tr><span class="d">월 – 금</span><span class="t">오전 10:00 – 오후 19:00</span></tr>
+            <tr><span class="d">토요일</span><span class="t">오전 10:00 – 오후 15:00</span></tr>
+            <tr><span class="d">점심시간</span><span class="t">오후 13:00 – 14:00</span></tr>
+            <tr><span class="d">일요일 · 공휴일</span><span class="t">휴진</span></tr>
+          </table>
+        </div>
+        <div class="phone-line">
+          <span class="lbl">RESERVATION</span>
+          <a class="num" href="tel:0200000000">02-000-0000</a>
+        </div>
+        <div class="loc-cta"><a href="https://iroomskin.imweb.me/">온라인 상담 예약하기</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>

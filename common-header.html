@@ -1,0 +1,134 @@
+<!-- ===== IROOM 공용 헤더 (Imweb 코드블록 / 전 페이지 공통) ===== -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@400;500&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+.ab-head{
+  --ink:#1c1a16;--ink-soft:#363129;--ivory:#f6f3ec;--cream:#ece7dc;--stone:#cfc7b8;
+  --taupe:#a99a82;--gold:#9a8460;--gold-deep:#7d6a4c;--line:rgba(28,26,22,.14);
+  --serif:"Noto Serif KR",serif;--latin:"Cormorant Garamond",serif;
+  --sans:"Noto Sans KR","Pretendard",system-ui,sans-serif;
+}
+.ab-head *{margin:0;padding:0;box-sizing:border-box}
+.ab-head{font-family:var(--sans);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+.ab-head a{color:inherit;text-decoration:none}
+
+/* NAV */
+.ab-head .nav{width:100vw;position:sticky;top:0;left:50%;transform:translateX(-50%);z-index:100;color:var(--ink);background:rgba(246,243,236,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+.ab-head .nav-inner{max-width:1280px;margin:0 auto;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.ab-head .brand{display:flex;align-items:baseline;gap:10px;font-family:var(--latin)}
+.ab-head .brand .lmark{font-size:24px;font-weight:500;letter-spacing:.04em}
+.ab-head .brand .ko{font-family:var(--serif);font-size:14px;font-weight:500;letter-spacing:.08em;opacity:.85}
+.ab-head .nav-menu{display:flex;align-items:center;gap:30px;list-style:none}
+.ab-head .nav-menu>li{position:relative;font-size:14px;letter-spacing:.02em;font-weight:500}
+.ab-head .nav-menu>li>a{padding:14px 0;display:inline-block}
+.ab-head .submenu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);background:var(--ivory);min-width:188px;padding:10px 0;border:1px solid var(--line);box-shadow:0 18px 40px rgba(20,18,14,.14);opacity:0;visibility:hidden;transition:.28s;list-style:none}
+.ab-head .has-sub:hover .submenu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.ab-head .submenu li a{display:block;padding:9px 22px;font-size:13.5px;transition:.2s}
+.ab-head .submenu li a:hover{background:var(--cream);color:var(--gold-deep)}
+.ab-head .submenu .div{height:1px;background:var(--line);margin:8px 18px}
+.ab-head .nav-right{display:flex;align-items:center;gap:18px}
+.ab-head .lang{display:flex;gap:9px;font-size:11px;letter-spacing:.12em;font-weight:500}
+.ab-head .lang a{opacity:.5;transition:.2s}.ab-head .lang a.on{opacity:1}
+.ab-head .nav-cta{font-size:13px;font-weight:500;letter-spacing:.04em;border:1px solid currentColor;padding:9px 18px;border-radius:40px;transition:.3s}
+.ab-head .nav-cta:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.ab-head .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:0}
+.ab-head .burger span{width:24px;height:1.5px;background:currentColor;transition:.3s}
+
+/* MOBILE MENU */
+.ab-head .mobile-menu{position:fixed;inset:0;z-index:120;background:var(--ivory);transform:translateX(100%);transition:transform .45s cubic-bezier(.7,0,.2,1);overflow-y:auto}
+.ab-head .mobile-menu.open{transform:none}
+.ab-head .mm-top{display:flex;justify-content:space-between;align-items:center;padding:22px 26px;border-bottom:1px solid var(--line)}
+.ab-head .mm-close{background:none;border:0;font-size:26px;cursor:pointer}
+.ab-head .mm-list{padding:14px 26px 40px;list-style:none}
+.ab-head .mm-list>li{border-bottom:1px solid var(--line)}
+.ab-head .mm-list>li>a,.ab-head .mm-acc-head{display:flex;justify-content:space-between;align-items:center;padding:18px 2px;font-family:var(--serif);font-size:18px;font-weight:500;cursor:pointer;width:100%;background:none;border:0;text-align:left;color:inherit}
+.ab-head .mm-acc-body{max-height:0;overflow:hidden;transition:max-height .35s}
+.ab-head .mm-acc-body.open{max-height:420px}
+.ab-head .mm-acc-body a{display:block;padding:11px 8px;font-size:14px;color:var(--ink-soft)}
+.ab-head .mm-acc-head .chev{transition:transform .3s;font-size:14px;color:var(--taupe)}
+.ab-head .mm-acc-head.open .chev{transform:rotate(180deg)}
+.ab-head .mm-foot{padding:24px 26px;background:var(--cream)}
+.ab-head .mm-foot a{display:block;text-align:center;background:var(--ink);color:var(--ivory);padding:15px;border-radius:46px;font-size:14px}
+
+@media(max-width:768px){
+  .ab-head .nav-menu,.ab-head .nav-cta,.ab-head .lang{display:none}
+  .ab-head .burger{display:flex}.ab-head .nav-inner{padding:16px 22px}
+}
+</style>
+
+<div class="ab-head">
+<header class="nav">
+  <div class="nav-inner">
+    <a href="https://iroomskin.imweb.me/" class="brand"><span class="lmark">iroom</span><span class="ko">이룸피부과</span></a>
+    <nav>
+      <ul class="nav-menu">
+        <li class="has-sub">
+          <a href="https://iroomskin.imweb.me/16">ABOUT</a>
+          <ul class="submenu">
+            <li><a href="https://iroomskin.imweb.me/16#brand-core">브랜드코어</a></li>
+            <li><a href="https://iroomskin.imweb.me/16#doctors">의료진소개</a></li>
+            <li><a href="https://iroomskin.imweb.me/16#location">진료시간 / 오시는길</a></li>
+            <li class="div"></li>
+            <li><a href="https://iroomskin.imweb.me/">시술장비</a></li>
+            <li><a href="https://iroomskin.imweb.me/">공지 / 이벤트</a></li>
+            <li><a href="https://youtube.com" target="_blank" rel="noopener">유튜브</a></li>
+          </ul>
+        </li>
+        <li><a href="https://iroomskin.imweb.me/">특수질환</a></li>
+        <li><a href="https://iroomskin.imweb.me/">항노화</a></li>
+        <li><a href="https://iroomskin.imweb.me/">흉터</a></li>
+        <li><a href="https://iroomskin.imweb.me/">여드름</a></li>
+        <li><a href="https://iroomskin.imweb.me/">색소</a></li>
+        <li><a href="https://iroomskin.imweb.me/">홍조혈관</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="lang"><a href="#" class="on">KR</a><a href="#">EN</a></div>
+      <a href="https://iroomskin.imweb.me/" class="nav-cta">상담예약</a>
+      <button class="burger" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu">
+  <div class="mm-top">
+    <div class="brand"><span class="lmark" style="font-family:var(--latin);font-size:24px">iroom</span></div>
+    <button class="mm-close" aria-label="닫기">×</button>
+  </div>
+  <ul class="mm-list">
+    <li>
+      <button class="mm-acc-head"><span>ABOUT</span><span class="chev">▾</span></button>
+      <div class="mm-acc-body">
+        <a href="https://iroomskin.imweb.me/16#brand-core">브랜드코어</a>
+        <a href="https://iroomskin.imweb.me/16#doctors">의료진소개</a>
+        <a href="https://iroomskin.imweb.me/16#location">진료시간 / 오시는길</a>
+        <a href="https://iroomskin.imweb.me/">시술장비</a>
+        <a href="https://iroomskin.imweb.me/">공지 / 이벤트</a>
+        <a href="https://youtube.com" target="_blank" rel="noopener">유튜브</a>
+      </div>
+    </li>
+    <li><a href="https://iroomskin.imweb.me/">특수질환</a></li>
+    <li><a href="https://iroomskin.imweb.me/">항노화</a></li>
+    <li><a href="https://iroomskin.imweb.me/">흉터</a></li>
+    <li><a href="https://iroomskin.imweb.me/">여드름</a></li>
+    <li><a href="https://iroomskin.imweb.me/">색소</a></li>
+    <li><a href="https://iroomskin.imweb.me/">홍조혈관</a></li>
+  </ul>
+  <div class="mm-foot"><a href="https://iroomskin.imweb.me/">상담 · 예약하기</a></div>
+</div>
+</div>
+
+<script>
+(function(){
+  var roots=document.querySelectorAll('.ab-head');
+  var root=roots[roots.length-1];
+  if(!root)return;
+  var mm=root.querySelector('.mobile-menu');
+  var burger=root.querySelector('.burger');
+  var closeBtn=root.querySelector('.mm-close');
+  if(burger)burger.onclick=function(){mm.classList.add('open');document.body.style.overflow='hidden';};
+  if(closeBtn)closeBtn.onclick=function(){mm.classList.remove('open');document.body.style.overflow='';};
+  root.querySelectorAll('.mm-list a').forEach(function(a){a.addEventListener('click',function(){mm.classList.remove('open');document.body.style.overflow='';});});
+  var acc=root.querySelector('.mm-acc-head');
+  if(acc)acc.addEventListener('click',function(){this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');});
+})();
+</script>
