@@ -11,6 +11,8 @@
   /* 아임웹 무료 제공자 배너 숨김 (고정 클래스 + 바깥 alert 막대) */
   ._free_banner,.free_site_banner{display:none !important}
   [role="alert"]:has(._free_banner){display:none !important}
+  /* 아임웹 기본 푸터 숨김 (공통 푸터로 대체) */
+  .footer-section{display:none !important}
 
   .ab-head,.ab-foot{
     --ink:#1c1a16;--ink-soft:#363129;--ivory:#f6f3ec;--cream:#ece7dc;--stone:#cfc7b8;
