@@ -34,7 +34,7 @@
   .ab-head .nav-menu{display:flex;align-items:center;gap:30px;list-style:none}
   .ab-head .nav-menu>li{position:relative;font-size:14px;letter-spacing:.02em;font-weight:500}
   .ab-head .nav-menu>li>a{padding:14px 0;display:inline-block}
-  .ab-head .submenu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);background:var(--ivory);min-width:188px;padding:10px 0;border:1px solid var(--line);box-shadow:0 18px 40px rgba(20,18,14,.14);opacity:0;visibility:hidden;transition:.28s;list-style:none}
+  .ab-head .submenu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);background:var(--ivory);color:var(--ink);min-width:188px;padding:10px 0;border:1px solid var(--line);box-shadow:0 18px 40px rgba(20,18,14,.14);opacity:0;visibility:hidden;transition:.28s;list-style:none}
   .ab-head .has-sub:hover .submenu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
   .ab-head .submenu li a{display:block;padding:9px 22px;font-size:13.5px;transition:.2s}
   .ab-head .submenu li a:hover{background:var(--cream);color:var(--gold-deep)}
