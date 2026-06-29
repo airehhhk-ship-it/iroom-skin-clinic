@@ -59,7 +59,7 @@
   .ab-head .mm-foot a{display:block;text-align:center;background:var(--ink);color:var(--ivory);padding:15px;border-radius:46px;font-size:14px}
 
   /* FOOTER */
-  .ab-foot .footer{width:100vw;position:relative;left:50%;transform:translateX(-50%);color:#e8e3d8;overflow:hidden;background-color:var(--ink);background-image:radial-gradient(90% 70% at 78% 12%,rgba(154,132,96,.18),transparent 60%),radial-gradient(70% 80% at 8% 90%,rgba(255,255,255,.06),transparent 55%),linear-gradient(165deg,#232019 0%,#15130f 100%)}
+  .ab-foot .footer{width:100%;position:relative;color:#e8e3d8;overflow:hidden;background-color:var(--ink);background-image:radial-gradient(90% 70% at 78% 12%,rgba(154,132,96,.18),transparent 60%),radial-gradient(70% 80% at 8% 90%,rgba(255,255,255,.06),transparent 55%),linear-gradient(165deg,#232019 0%,#15130f 100%)}
   .ab-foot .footer-inner{position:relative;z-index:2;padding:clamp(64px,8vw,100px) 0 40px;max-width:var(--maxw);margin:0 auto;padding-left:28px;padding-right:28px}
   .ab-foot .foot-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:46px}
   .ab-foot .foot-brand .lmark{font-family:var(--latin);font-size:30px;letter-spacing:.04em;margin-bottom:6px}
