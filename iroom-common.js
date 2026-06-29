@@ -8,6 +8,10 @@
   var FONTS = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap";
 
   var CSS = `
+  /* 아임웹 무료 제공자 배너 숨김 (고정 클래스 + 바깥 alert 막대) */
+  ._free_banner,.free_site_banner{display:none !important}
+  [role="alert"]:has(._free_banner){display:none !important}
+
   .ab-head,.ab-foot{
     --ink:#1c1a16;--ink-soft:#363129;--ivory:#f6f3ec;--cream:#ece7dc;--stone:#cfc7b8;
     --taupe:#a99a82;--gold:#9a8460;--gold-deep:#7d6a4c;
@@ -230,22 +234,30 @@
     startBannerHide();
   }
 
+  function hideEl(el) {
+    if (el && el.style) el.style.setProperty('display', 'none', 'important');
+  }
+
   function hideImwebBanner() {
     if (!document.body) return;
+    // 1) 무료 제공자 배너 — 고정 클래스로 탐지 후 바깥 alert 막대까지 숨김
+    document.querySelectorAll('._free_banner,.free_site_banner').forEach(function (b) {
+      var wrap = b.closest && b.closest('[role="alert"]');
+      hideEl(wrap || b.parentElement || b);
+    });
+    // 2) 'Imweb Corp.' 하단 크레딧 — 텍스트로 탐지
     var els = document.body.getElementsByTagName('*');
     for (var i = 0; i < els.length; i++) {
       var el = els[i];
-      // 자식 없는 말단 요소 중 "Imweb Corp" 텍스트를 가진 것
       if (el.children.length === 0 && /Imweb\s*Corp/i.test(el.textContent || '')) {
         var leafLen = (el.textContent || '').replace(/\s/g, '').length;
         var target = el;
-        // 같은 텍스트만 담은 부모(=배너 막대)까지 거슬러 올라가 통째로 숨김
         while (target.parentElement &&
                target.parentElement !== document.body &&
                (target.parentElement.textContent || '').replace(/\s/g, '').length <= leafLen + 6) {
           target = target.parentElement;
         }
-        if (target && target.style) target.style.setProperty('display', 'none', 'important');
+        hideEl(target);
       }
     }
   }
