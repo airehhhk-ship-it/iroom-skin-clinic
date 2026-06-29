@@ -236,6 +236,14 @@
         var onScroll = function () { nav.classList.toggle('scrolled', window.pageYOffset > 20); };
         onScroll();
         window.addEventListener('scroll', onScroll, { passive: true });
+
+        // 헤더 실제 높이를 변수로 내려, 페이지 서브메뉴(sticky)가 정확히 그 아래 붙도록
+        var setNavH = function () {
+          document.documentElement.style.setProperty('--ab-navh', nav.offsetHeight + 'px');
+        };
+        setNavH();
+        window.addEventListener('resize', setNavH);
+        [300, 1000, 2000].forEach(function (t) { setTimeout(setNavH, t); }); // 폰트 로드 후 재측정
       }
     }
 

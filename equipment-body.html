@@ -31,7 +31,7 @@
 .eq-body .hero .ko{margin-top:18px;font-family:var(--serif);font-weight:300;font-size:clamp(14px,1.7vw,18px);letter-spacing:.05em;color:rgba(246,243,236,.82);line-height:1.9}
 
 /* SUB NAV */
-.eq-body .subnav{position:sticky;top:64px;z-index:50;background:rgba(246,243,236,.95);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.eq-body .subnav{position:sticky;top:var(--ab-navh,68px);z-index:900;background:var(--ivory);border-bottom:1px solid var(--line)}
 .eq-body .subnav-inner{max-width:var(--maxw);margin:0 auto;display:flex;gap:6px;padding:0 28px;justify-content:center;flex-wrap:wrap}
 .eq-body .subnav a{padding:18px 22px;font-size:13.5px;font-weight:500;letter-spacing:.02em;color:var(--ink-soft);transition:.3s}
 .eq-body .subnav a:hover{color:var(--ink)}
@@ -75,7 +75,7 @@
 .eq-body .eq-cta .btn:hover{background:var(--gold-deep);transform:translateY(-2px)}
 
 @media(max-width:1024px){.eq-body .eq-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:768px){.eq-body .wrap{padding:0 22px}.eq-body .subnav{top:57px}.eq-body .eq-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.eq-body .wrap{padding:0 22px}.eq-body .eq-grid{grid-template-columns:1fr}}
 </style>
 
 <div class="eq-body">

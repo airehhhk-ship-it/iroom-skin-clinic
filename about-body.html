@@ -1,4 +1,4 @@
-<!-- ===== IROOM ABOUT / 본문 전체 (히어로+브랜드코어+의료진+오시는길) 단일 코드블록 ===== -->
+<!-- ===== IROOM ABOUT / 본문 전체 (히어로+서브메뉴+브랜드코어+의료진+오시는길) 단일 코드블록 ===== -->
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
 .ab-body{
@@ -30,8 +30,8 @@
 .ab-body .about-hero h1 em{font-style:italic}
 .ab-body .about-hero .ko{margin-top:18px;font-family:var(--serif);font-weight:300;font-size:clamp(14px,1.7vw,18px);letter-spacing:.05em;color:rgba(246,243,236,.82);line-height:1.9}
 
-/* SUB NAV */
-.ab-body .subnav{position:sticky;top:64px;z-index:50;background:rgba(246,243,236,.95);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+/* SUB NAV — 측정된 헤더 높이(--ab-navh) 바로 아래에 고정 */
+.ab-body .subnav{position:sticky;top:var(--ab-navh,68px);z-index:900;background:var(--ivory);border-bottom:1px solid var(--line)}
 .ab-body .subnav-inner{max-width:var(--maxw);margin:0 auto;display:flex;gap:6px;padding:0 28px;justify-content:center;flex-wrap:wrap}
 .ab-body .subnav a{padding:18px 22px;font-size:13.5px;font-weight:500;letter-spacing:.02em;color:var(--ink-soft);transition:.3s}
 .ab-body .subnav a:hover{color:var(--ink)}
@@ -97,7 +97,7 @@
 .ab-body .loc-cta a:hover{background:var(--gold);transform:translateY(-2px)}
 
 @media(max-width:1024px){.ab-body .bc-grid,.ab-body .loc-grid{grid-template-columns:1fr}.ab-body .values,.ab-body .doc-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){.ab-body .wrap{padding:0 22px}.ab-body .subnav{top:57px}.ab-body .values,.ab-body .doc-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.ab-body .wrap{padding:0 22px}.ab-body .values,.ab-body .doc-grid{grid-template-columns:1fr}}
 </style>
 
 <div class="ab-body">
