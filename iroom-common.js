@@ -114,12 +114,12 @@
               <li><a href="https://youtube.com" target="_blank" rel="noopener">유튜브</a></li>
             </ul>
           </li>
-          <li><a href="https://iroomskin.imweb.me/">특수질환</a></li>
-          <li><a href="https://iroomskin.imweb.me/">항노화</a></li>
-          <li><a href="https://iroomskin.imweb.me/">흉터</a></li>
-          <li><a href="https://iroomskin.imweb.me/">여드름</a></li>
-          <li><a href="https://iroomskin.imweb.me/">색소</a></li>
-          <li><a href="https://iroomskin.imweb.me/">홍조혈관</a></li>
+          <li><a href="https://iroomskin.imweb.me/19">특수질환</a></li>
+          <li><a href="https://iroomskin.imweb.me/20">항노화</a></li>
+          <li><a href="https://iroomskin.imweb.me/21">흉터</a></li>
+          <li><a href="https://iroomskin.imweb.me/22">여드름</a></li>
+          <li><a href="https://iroomskin.imweb.me/23">색소</a></li>
+          <li><a href="https://iroomskin.imweb.me/24">홍조혈관</a></li>
         </ul>
       </nav>
       <div class="nav-right">
@@ -146,12 +146,12 @@
           <a href="https://youtube.com" target="_blank" rel="noopener">유튜브</a>
         </div>
       </li>
-      <li><a href="https://iroomskin.imweb.me/">특수질환</a></li>
-      <li><a href="https://iroomskin.imweb.me/">항노화</a></li>
-      <li><a href="https://iroomskin.imweb.me/">흉터</a></li>
-      <li><a href="https://iroomskin.imweb.me/">여드름</a></li>
-      <li><a href="https://iroomskin.imweb.me/">색소</a></li>
-      <li><a href="https://iroomskin.imweb.me/">홍조혈관</a></li>
+      <li><a href="https://iroomskin.imweb.me/19">특수질환</a></li>
+      <li><a href="https://iroomskin.imweb.me/20">항노화</a></li>
+      <li><a href="https://iroomskin.imweb.me/21">흉터</a></li>
+      <li><a href="https://iroomskin.imweb.me/22">여드름</a></li>
+      <li><a href="https://iroomskin.imweb.me/23">색소</a></li>
+      <li><a href="https://iroomskin.imweb.me/24">홍조혈관</a></li>
     </ul>
     <div class="mm-foot"><a href="https://iroomskin.imweb.me/">상담 · 예약하기</a></div>
   </div>
