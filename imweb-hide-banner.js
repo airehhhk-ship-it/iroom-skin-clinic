@@ -1,6 +1,7 @@
 /* =========================================================
-   아임웹 무료 제공자 배너 숨김 (단독·범용)
-   "이 사이트는 아임웹으로 제작되었습니다" 배너 + 'Imweb Corp' 크레딧 숨김
+   아임웹 무료 제공자 배너 + 기본 푸터 숨김 (단독·범용)
+   "이 사이트는 아임웹으로 제작되었습니다" 배너 + 'Imweb Corp' 크레딧
+   + 기본 푸터(.footer-section) 숨김
 
    사용법: 아임웹 [사이트 설정 > 헤더 코드 삽입]에 아래 한 줄 추가
    <script src="https://cdn.jsdelivr.net/gh/airehhhk-ship-it/iroom-skin-clinic@main/imweb-hide-banner.js"></script>
@@ -12,7 +13,8 @@
   // 1) CSS로 즉시 숨김 (클래스명이 바뀌어도 고정 클래스로 잡음)
   var css =
     '._free_banner,.free_site_banner{display:none !important}' +
-    '[role="alert"]:has(._free_banner){display:none !important}';
+    '[role="alert"]:has(._free_banner){display:none !important}' +
+    '.footer-section{display:none !important}';
   function injectCSS() {
     if (document.getElementById('imweb-hide-banner-style')) return;
     var st = document.createElement('style');
