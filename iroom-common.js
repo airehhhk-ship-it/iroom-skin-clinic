@@ -108,18 +108,22 @@
               <li><a href="https://iroomskin.imweb.me/16#brand-core">브랜드코어</a></li>
               <li><a href="https://iroomskin.imweb.me/16#doctors">의료진소개</a></li>
               <li><a href="https://iroomskin.imweb.me/16#location">진료시간 / 오시는길</a></li>
-              <li class="div"></li>
-              <li><a href="https://iroomskin.imweb.me/17">시술장비</a></li>
-              <li><a href="https://iroomskin.imweb.me/18">공지 / 이벤트</a></li>
-              <li><a href="https://youtube.com" target="_blank" rel="noopener">유튜브</a></li>
             </ul>
           </li>
-          <li><a href="https://iroomskin.imweb.me/19">특수질환</a></li>
-          <li><a href="https://iroomskin.imweb.me/20">항노화</a></li>
-          <li><a href="https://iroomskin.imweb.me/21">흉터</a></li>
-          <li><a href="https://iroomskin.imweb.me/22">여드름</a></li>
-          <li><a href="https://iroomskin.imweb.me/23">색소</a></li>
-          <li><a href="https://iroomskin.imweb.me/24">홍조혈관</a></li>
+          <li class="has-sub">
+            <a href="https://iroomskin.imweb.me/19">진료안내</a>
+            <ul class="submenu">
+              <li><a href="https://iroomskin.imweb.me/19">특수질환</a></li>
+              <li><a href="https://iroomskin.imweb.me/20">항노화</a></li>
+              <li><a href="https://iroomskin.imweb.me/21">흉터</a></li>
+              <li><a href="https://iroomskin.imweb.me/22">여드름</a></li>
+              <li><a href="https://iroomskin.imweb.me/23">색소</a></li>
+              <li><a href="https://iroomskin.imweb.me/24">홍조혈관</a></li>
+            </ul>
+          </li>
+          <li><a href="https://iroomskin.imweb.me/17">시술장비</a></li>
+          <li><a href="https://iroomskin.imweb.me/18">공지 / 이벤트</a></li>
+          <li><a href="https://youtube.com" target="_blank" rel="noopener">유튜브</a></li>
         </ul>
       </nav>
       <div class="nav-right">
@@ -141,17 +145,22 @@
           <a href="https://iroomskin.imweb.me/16#brand-core">브랜드코어</a>
           <a href="https://iroomskin.imweb.me/16#doctors">의료진소개</a>
           <a href="https://iroomskin.imweb.me/16#location">진료시간 / 오시는길</a>
-          <a href="https://iroomskin.imweb.me/17">시술장비</a>
-          <a href="https://iroomskin.imweb.me/18">공지 / 이벤트</a>
-          <a href="https://youtube.com" target="_blank" rel="noopener">유튜브</a>
         </div>
       </li>
-      <li><a href="https://iroomskin.imweb.me/19">특수질환</a></li>
-      <li><a href="https://iroomskin.imweb.me/20">항노화</a></li>
-      <li><a href="https://iroomskin.imweb.me/21">흉터</a></li>
-      <li><a href="https://iroomskin.imweb.me/22">여드름</a></li>
-      <li><a href="https://iroomskin.imweb.me/23">색소</a></li>
-      <li><a href="https://iroomskin.imweb.me/24">홍조혈관</a></li>
+      <li>
+        <button class="mm-acc-head"><span>진료안내</span><span class="chev">▾</span></button>
+        <div class="mm-acc-body">
+          <a href="https://iroomskin.imweb.me/19">특수질환</a>
+          <a href="https://iroomskin.imweb.me/20">항노화</a>
+          <a href="https://iroomskin.imweb.me/21">흉터</a>
+          <a href="https://iroomskin.imweb.me/22">여드름</a>
+          <a href="https://iroomskin.imweb.me/23">색소</a>
+          <a href="https://iroomskin.imweb.me/24">홍조혈관</a>
+        </div>
+      </li>
+      <li><a href="https://iroomskin.imweb.me/17">시술장비</a></li>
+      <li><a href="https://iroomskin.imweb.me/18">공지 / 이벤트</a></li>
+      <li><a href="https://youtube.com" target="_blank" rel="noopener">유튜브</a></li>
     </ul>
     <div class="mm-foot"><a href="https://iroomskin.imweb.me/">상담 · 예약하기</a></div>
   </div>
@@ -229,8 +238,9 @@
       head.querySelectorAll('.mm-list a').forEach(function (a) {
         a.addEventListener('click', function () { mm.classList.remove('open'); document.body.style.overflow = ''; });
       });
-      var acc = head.querySelector('.mm-acc-head');
-      if (acc) acc.addEventListener('click', function () { this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open'); });
+      head.querySelectorAll('.mm-acc-head').forEach(function (acc) {
+        acc.addEventListener('click', function () { this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open'); });
+      });
 
       // 스크롤 시 헤더 투명 → 솔리드 전환
       var nav = head.querySelector('.nav');
