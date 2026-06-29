@@ -8,9 +8,6 @@
   var FONTS = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap";
 
   var CSS = `
-  /* 아임웹 하단 제공자 배너 숨김 */
-  .e96b868d-f454-4881-95fa-43a920b0d694{display:none !important}
-
   .ab-head,.ab-foot{
     --ink:#1c1a16;--ink-soft:#363129;--ivory:#f6f3ec;--cream:#ece7dc;--stone:#cfc7b8;
     --taupe:#a99a82;--gold:#9a8460;--gold-deep:#7d6a4c;
@@ -227,6 +224,40 @@
       });
       var acc = head.querySelector('.mm-acc-head');
       if (acc) acc.addEventListener('click', function () { this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open'); });
+    }
+
+    // 아임웹 하단 제공자 배너 숨김 (클래스명이 매번 바뀌므로 텍스트로 탐지)
+    startBannerHide();
+  }
+
+  function hideImwebBanner() {
+    if (!document.body) return;
+    var els = document.body.getElementsByTagName('*');
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
+      // 자식 없는 말단 요소 중 "Imweb Corp" 텍스트를 가진 것
+      if (el.children.length === 0 && /Imweb\s*Corp/i.test(el.textContent || '')) {
+        var leafLen = (el.textContent || '').replace(/\s/g, '').length;
+        var target = el;
+        // 같은 텍스트만 담은 부모(=배너 막대)까지 거슬러 올라가 통째로 숨김
+        while (target.parentElement &&
+               target.parentElement !== document.body &&
+               (target.parentElement.textContent || '').replace(/\s/g, '').length <= leafLen + 6) {
+          target = target.parentElement;
+        }
+        if (target && target.style) target.style.setProperty('display', 'none', 'important');
+      }
+    }
+  }
+
+  function startBannerHide() {
+    hideImwebBanner();
+    // 늦게 렌더되거나 다시 그려지는 경우 대비
+    [300, 800, 1500, 3000].forEach(function (t) { setTimeout(hideImwebBanner, t); });
+    if (window.MutationObserver) {
+      var mo = new MutationObserver(function () { hideImwebBanner(); });
+      mo.observe(document.body, { childList: true, subtree: true });
+      setTimeout(function () { mo.disconnect(); }, 8000); // 8초 후 감시 종료
     }
   }
 
