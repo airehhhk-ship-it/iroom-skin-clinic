@@ -8,6 +8,9 @@
   var FONTS = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap";
 
   var CSS = `
+  /* 아임웹 하단 제공자 배너 숨김 */
+  .e96b868d-f454-4881-95fa-43a920b0d694{display:none !important}
+
   .ab-head,.ab-foot{
     --ink:#1c1a16;--ink-soft:#363129;--ivory:#f6f3ec;--cream:#ece7dc;--stone:#cfc7b8;
     --taupe:#a99a82;--gold:#9a8460;--gold-deep:#7d6a4c;
