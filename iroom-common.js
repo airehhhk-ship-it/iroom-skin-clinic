@@ -206,15 +206,21 @@
     st.textContent = CSS;
     document.head.appendChild(st);
 
-    // 헤더 (body 맨 위)
-    var h = document.createElement('div');
-    h.innerHTML = HEADER;
-    document.body.insertBefore(h.firstElementChild, document.body.firstChild);
+    // 메인(홈)에서는 자체 상단/푸터가 있으므로 공통 헤더·푸터 삽입 안 함
+    var p = location.pathname.replace(/\/+$/, '');
+    var isHome = (p === '' || p === '/index' || p === '/home');
 
-    // 푸터 (body 맨 아래)
-    var ft = document.createElement('div');
-    ft.innerHTML = FOOTER;
-    document.body.appendChild(ft.firstElementChild);
+    if (!isHome) {
+      // 헤더 (body 맨 위)
+      var h = document.createElement('div');
+      h.innerHTML = HEADER;
+      document.body.insertBefore(h.firstElementChild, document.body.firstChild);
+
+      // 푸터 (body 맨 아래)
+      var ft = document.createElement('div');
+      ft.innerHTML = FOOTER;
+      document.body.appendChild(ft.firstElementChild);
+    }
 
     // 모바일 메뉴 동작
     var head = document.querySelector('.ab-head');
